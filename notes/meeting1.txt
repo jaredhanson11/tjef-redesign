@@ -1,0 +1,106 @@
+###########################
+## Meeting 1 - 6/23 #######
+###########################
+
+    ###########################
+    ## Initial thoughts #######
+    ###########################
+
+    My initial thoughts are that we need a single page website or something
+    close. I think the current website has good content, besides the fact that
+    it is missing pictures to go along with the content, but I think it is too
+    hard to navigate and find the content that we are interested in displaying.
+
+    The videos are touching and personal and have a lot of character to them.
+    They allow outsiders to meet the TJEF fellows and realize exactly the
+    reach and presence that TJEF has. Until I started reviewing the site, though
+    I honestly never even watched them and didn't know what they were for. I
+    think we need to put a lot more emphasis on these. That being said, I think
+    that they should be combined with the Stories tab as one Fellows section.
+
+    About TJEF should be the first thing we show them, and in About TJEF, we
+    should also show the College of Mentors and the governing board.
+
+    In order to keep the single page scrolling feel of the website, we need
+    popups for more information about stories, board members, fellows, videos,
+    etc.
+
+    ###########################
+    ## Questions ##############
+    ###########################
+
+    1. How often do we think that we are going to be adding or changing content
+    on the website? Additionally, who do we want to give access to making
+    those changes?
+        1a. How simple of an interface do we want for making those changes?
+        1b. How much money do we want to spend?
+
+    2. How critical are the donations, in the sense that is that the entire
+    reason for the website, or is that just something we want there because why
+    not?
+        2a. Stripe support is definitely feasible, but if that's the entire
+        reason for the site, then maybe we do want to use a service.
+
+    3. How do we want the development and design process to work? Should I
+    mockup designs for the entire site and show you exactly what it will look
+    like so you can approve/deny before I actually implement the site? Or do
+    you you want me to basically just give you an overview of what I think it
+    will look like and run with that and just give you weekly status reports?
+        3a. Basically, do you want to be extremely involved in the actual
+        design of every aspect of the site, or do you want me to take the lead
+        and show you results?
+
+    ###########################
+    ## My Design Vision #######
+    ###########################
+
+    similiar example: http://demo.web3canvas.com/themeforest/duotone/index.html
+
+    tjef.org                            navbar - stuck to top on scroll
+
+    |--------------------------------|  |--------------------------------|
+    |                                |  |Home About People Donate Contact|
+    |                                |  |--------------------------------|
+    |                                |             |       |
+    |              TJEF              |             | Board |
+    |                                |             |Fellows|
+    |                                |             |-------|
+    |                                |
+    |--------------------------------|
+    |          About TJEF            |
+    |                                |
+    |     Mission Vision Impact      |
+    |                                |
+    |           More Info            |
+    |     |_|   |_|   |_|   |_|      | <------ questions with popup answers
+    |                                |         1. resources we deploy?
+    |--------------------------------|         2. treillage?
+    |           Our Board            |         3. college of mentors?
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |--------------------------------|
+    |          Our Fellows           |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |     |_|   |_|   |_|   |_|      |
+    |                                |
+    |--------------------------------|
+    |            Donate              |
+    |          |________|            |
+    |--------------------------------|
+    |          Contact Us            |
+    |          |________|            |
+    |--------------------------------|
+
+
