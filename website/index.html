@@ -5,5 +5,53 @@
     <title>TJEF</title>
   </head>
   <body>
+    <img id="landing-image" src=""/>
+
+    <img id="logo" src=""/>
+
+    <h1 id="landing-text">TJEF</h1>
+
+    <div id="navbar">
+    </div>
+
+    <img id="Home-image" src=""/>
+
+    <div id="stories-header">
+	<h1>Stories</h1>
+    </div>
+    
+    <div id="stories-subheader">
+	<h3>Stories</h3>
+    </div>
+
+    <div id="stories-container">
+	<p>
+	  <script>
+	      function storyShortener (story) {
+	         var storyLength = story.length;	
+	         if (storyLength > 200) {
+		   var shortStory = story.substring(0, 200);
+		   return shortStory;
+	         };
+	      };
+        </script>
+	</p>
+    </div>
+    
+    <div id="videos-subheader">
+	<h3>Videos</h3>
+    </div>
+
+    <div id="videos-container">
+	<iframe width="320" height="240" src="https://www.youtube.com/embed/Y3P8FhLfGAM" frameborder="0" allowfullscreen>
+	</iframe>
+	<div id="video-caption">
+	  <p>
+	      <script>
+		storyShortener(Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a imperdiet augue, sit amet dapibus ex. Etiam eget tortor tempus, blandit nunc tempus, tempus nulla. Integer imperdiet risus metus, eu tincidunt risus maximus non. Proin tincidunt, est nec congue sollicitudin, justo augue imperdiet eros, et facilisis ex erat non nibh. Vestibulum diam sem, condimentum et rutrum sit amet, facilisis vitae nisi. Suspendisse enim odio, egestas quis mattis et, ultricies vel arcu. Phasellus non feugiat diam, vel sollicitudin sem. Donec leo enim, rutrum eu magna a, facilisis vehicula arcu.);
+	      </script>
+	  </p>
+	</div>
+    </div>
   </body>
 </html>
