@@ -1,25 +1,60 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-};
+body {
+  margin: 0;
+  padding: 0;
+}
 
-li {
-    float: left;
-};
+/* Delete this, only for demoing the navbar scroll */
+.landing-screen, .section {
+  height: 100vh;
+}
+/* Delete this, only for demoing the navbar scroll */
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-};
+/*///////////// Nav bar related css /////////////*/
+.navbar-offset {
+/* Class added to body so that navbar doesn't overlay on content */
+  padding-top: 50px;
+}
 
-li a:hover {
-    background-color: #111;
-};
+.fixed-top {
+/* Class added to navbar when scrolled past homescreen */
+  position: fixed;
+  top: 0;
+}
 
+.nav-bar {
+  /* Flexbox container */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End flexbox */
+
+  /* Sizing */
+  width: 100%;
+  height: 50px;
+  /* End Sizing */
+}
+
+.nav-item {
+  /* Flexbox container */
+  /* This vertically aligns the text in nav-item */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End Flexbox container */
+
+  /* Sizing */
+  height: 100%;
+  /* End Sizing */
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink 1;
+}
+
+.nav-dropdown .dropdown {
+  display: none;
+}
+/*/////////// End Nav bar related css /////////// */

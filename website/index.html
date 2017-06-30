@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>TJEF</title>
-        <script type="text/javascript" src="index.js"></script>
-        <link rel="stylesheet" type="text/css" href="tjef-redesign.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
     </head>
 
     <body>
@@ -17,13 +18,17 @@
       <!-- End Landing screen -->
 
       <!-- Navigation bar -->
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#people">People</a></li>
-        <li><a href="#donate">Donate</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-bar">
+        <div class="nav-item"><a>About</a></div>
+        <div class="nav-item nav-dropdown">
+          <a>People</a>
+          <div class="dropdown">
+            <div class="dropdown-item">Fellows</div>
+            <div class="dropdown-item">Board</div>
+          </div>
+        </div>
+        <div class="nav-item"><a>Contact</a></div>
+      </div>
       <!-- End Navigation bar -->
 
       <!-- About TJEF -->
