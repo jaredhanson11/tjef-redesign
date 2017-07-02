@@ -1,10 +1,15 @@
-body {
+body, p {
   margin: 0;
   padding: 0;
 }
+* {
+  font-family: 'Lato', sans-serif;
+}
 
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
 /* Delete this, only for demoing the navbar scroll */
-.landing-screen, .section {
+.landing-screen, .fellows {
   height: 100vh;
 }
 /* Delete this, only for demoing the navbar scroll */
@@ -36,7 +41,7 @@ body {
   /* End Sizing */
 }
 
-.nav-item {
+.nav-bar > .nav-item {
   /* Flexbox container */
   /* This vertically aligns the text in nav-item */
   display: flex;
@@ -54,7 +59,174 @@ body {
   flex-shrink 1;
 }
 
-.nav-dropdown .dropdown {
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > .dropdown {
   display: none;
+  position: absolute;
+  margin-top: 30px;
 }
 /*/////////// End Nav bar related css /////////// */
+
+/*/////////// Common section properties /////////// */
+.section {
+  width: 65%;
+  margin: auto;
+}
+
+@media (max-width : 768px) {
+  .section {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+.section-title {
+  /* Positioning */
+  padding: 10px 0;
+  /* End Positioning */
+
+  /* Font */
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  /* End Font */
+}
+
+.section-intro {
+  padding: 10px 0;
+}
+
+.section-intro > .intro-header {
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.section-intro > .intro-summary {
+  padding: 10px 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-intro > .intro-summary > p {
+  padding: 10px 0;
+}
+
+.modal-background.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,.8);
+
+  overflow: auto;
+}
+
+.modal-background > .modal-contents {
+  display:block;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  margin: 20vh 20vw 0 20vw;
+  padding: 20px;
+
+  background: white;
+  box-shadow: 0 3px 7px grey;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+@media (max-width : 768px) {
+  .modal-background > .modal-contents {
+    margin: 20vh 5vh 0 5vh;
+  }
+}
+
+.modal-background > .modal-contents > .goal-button > .exit-modal {
+}
+
+.modal-background > .modal-contents > .goal-button > .goal-title {
+}
+
+.modal-background > .modal-contents > .goal-button > .goal-body {
+}
+
+.modal-background > .modal-contents > .goal-body > p {
+}
+
+/*/////////// End common section properties /////////// */
+
+/*/////////// About TJEF section /////////// */
+
+.main-goals {
+  /* Flex */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End Flex */
+}
+
+.main-goals > .goal-item {
+  /* Flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End Flex container */
+
+  padding: 10px;
+
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink 1;
+
+  height: 30vh;
+  width: 100%;
+}
+
+.main-goals > .goal-item > .goal-button {
+  border: dashed black thin;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width : 768px) {
+  .main-goals {
+    flex-direction: column;
+  }
+
+  .main-goals > .goal-item {
+    height: 20vh;
+  }
+
+  .main-goals > .goal-item > .goal-button {
+    width: 75%;
+  }
+}
+
+.main-goals > .goal-item > .goal-button > .goal-title {
+}
+
+.main-goals > .goal-item > .goal-button > .goal-body, .exit-modal {
+  display: none;
+}
+
+/*/////////// End About TJEF section /////////// */

@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  // Adding event listeners
+  /*//////// Event listeners ////////*/
+
+  //// Stick navbar to top ////
   var navBar = $('.nav-bar').first();
   $(window).scroll(function() {
     const windowHeight = $(window).height();
@@ -12,7 +14,35 @@ $(document).ready(function() {
         navBar.removeClass('fixed-top');
         $('body').removeClass('navbar-offset');
     }
+  });
+  //// End stick navbar to top ////
+
+  //// Navbar dropdown menu ////
+  var dropdown = $('.nav-dropdown');
+  dropdown.hover(
+      handlerIn=function(){$('.dropdown').slideDown();},
+      handlerOut=function(){$('.dropdown').slideUp();}
+  )
+  //// End Navbar dropdown menu ////
+
+  //// Pop up goal modal ////
+  var goalButton = $('.goal-button');
+  goalButton.click(function(){
+    var modalBackground = $('.modal-background');
+    var modalContents = $(this).clone();
+    modalContents.addClass('modal-contents');
+    modalBackground.addClass('active');
+    modalBackground.html(modalContents);
+    modalBackground.click(function(event){
+      if (event.target === this){
+        modalBackground.removeClass('active');
+        modalBackground.empty();
+      }
+    })
   })
+  //// End Pop up goal modal ////
+
+  /*//////// End Event listeners ////////*/
 })
 function storyShortener (story) {
     var storyLength = story.length;
