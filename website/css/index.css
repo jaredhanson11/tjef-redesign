@@ -12,6 +12,25 @@ body, p {
 .landing-screen, .fellows {
   height: 100vh;
 }
+#landing-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: -1;
+}
+#landing-text {
+  text-align: center;
+  padding-top: 60vh;
+  color: #fbfbea;
+  font: Helvetica;
+}
+#landing-title {
+  font-size: 400%;
+}
+#landing-subtitle {
+  font-size: 150%;
 /* Delete this, only for demoing the navbar scroll */
 
 /*///////////// Nav bar related css /////////////*/
