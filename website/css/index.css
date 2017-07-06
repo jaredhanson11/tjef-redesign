@@ -124,8 +124,7 @@ body, p {
 
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,.8);
-
-  overflow: auto;
+  padding: 30px;
 }
 
 .modal-background > .modal-contents {
@@ -136,6 +135,7 @@ body, p {
   top: 0;
 
   margin: 20vh 20vw 0 20vw;
+  max-height: 60vh;
   padding: 20px;
 
   background: white;
@@ -154,6 +154,9 @@ body, p {
 }
 
 .modal-background > .modal-contents > .goal-button > .goal-title {
+  text-align: center;
+  width: 100%;
+  border: dashed black thin;
 }
 
 .modal-background > .modal-contents > .goal-button > .goal-body {
@@ -197,6 +200,7 @@ body, p {
 
 .main-goals > .goal-item > .goal-button {
   border: dashed black thin;
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
@@ -225,7 +229,7 @@ body, p {
 .main-goals > .goal-item > .goal-button > .goal-title {
 }
 
-.main-goals > .goal-item > .goal-button > .goal-body, .exit-modal {
+.main-goals > .goal-item > .goal-button > .goal-body {
   display: none;
 }
 
