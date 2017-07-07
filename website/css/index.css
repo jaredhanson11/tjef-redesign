@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+/* CSS Resets */
 body, p {
   margin: 0;
   padding: 0;
 }
-* {
-  font-family: 'Lato', sans-serif;
+
+/* CSS Variables */
+body {
+  --color-one: #2E392A; /* Forest */
+  --color-two: #EFEFEF; /* Neutral */
+  --color-three: #89cff0; /* Baby blue */
+  background-color: var(--color-two);
+  color: var(--color-one);
+
+  font-family: 'Bree Serif', serif;
+  /*font-family: 'Lato', sans-serif;*/
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Lato');
-/* Delete this, only for demoing the navbar scroll */
-.landing-screen, .fellows {
+/* Landing Screen */
+.landing-screen {
   height: 100vh;
 }
-#landing-image {
+
+.landing-screen > .landing-image {
   width: 100%;
   position: absolute;
   top: 0;
@@ -20,19 +31,22 @@ body, p {
   height: 100vh;
   z-index: -1;
 }
-#landing-text {
+
+.landing-screen > .landing-text {
   text-align: center;
   padding-top: 60vh;
   color: #fbfbea;
   font: Helvetica;
 }
-#landing-title {
+
+.landing-screen > .landing-title {
   font-size: 400%;
 }
-#landing-subtitle {
+
+.landing-screen > .landing-subtitle {
   font-size: 150%;
 }
-/* Delete this, only for demoing the navbar scroll */
+/* Landing Screen */
 
 /*///////////// Nav bar related css /////////////*/
 .navbar-offset {
@@ -59,6 +73,9 @@ body, p {
   width: 100%;
   height: 50px;
   /* End Sizing */
+
+  background: white;
+  color: var(--color-one);
 }
 
 .nav-bar > .nav-item {
@@ -70,6 +87,8 @@ body, p {
   align-items: center;
   align-content: center;
   /* End Flexbox container */
+
+  box-shadow: 0 3px 3px lightgrey;
 
   /* Sizing */
   height: 100%;
@@ -105,7 +124,7 @@ body, p {
 
 .section-title {
   /* Positioning */
-  padding: 10px 0;
+  padding: 30px 0 10px 0;
   /* End Positioning */
 
   /* Font */
@@ -158,7 +177,7 @@ body, p {
   max-height: 60vh;
   padding: 20px;
 
-  background: white;
+  background: var(--color-two);
   box-shadow: 0 3px 7px grey;
   border-radius: 20px;
   overflow: auto;
@@ -170,19 +189,24 @@ body, p {
   }
 }
 
-.modal-background > .modal-contents > .goal-button > .exit-modal {
+.modal-background > .modal-contents .exit-modal {
 }
 
-.modal-background > .modal-contents > .goal-button > .goal-title {
+.modal-background > .modal-contents > .goal-title {
+  /* Text */
   text-align: center;
-  width: 100%;
-  border: dashed black thin;
+  font-weight: bold;
+  font-size: 150%;
+
+  /* Position */
+  padding: 5px 0;
 }
 
-.modal-background > .modal-contents > .goal-button > .goal-body {
+.modal-background > .modal-contents  > .goal-body {
 }
 
 .modal-background > .modal-contents > .goal-body > p {
+  padding: 5px 0;
 }
 
 /*/////////// End common section properties /////////// */
@@ -219,8 +243,11 @@ body, p {
 }
 
 .main-goals > .goal-item > .goal-button {
-  border: dashed black thin;
   cursor: pointer;
+
+  border-radius: 20px;
+  box-shadow: 0 3px 7px grey;
+  background: var(--color-three);
 
   display: flex;
   flex-direction: column;
@@ -230,6 +257,11 @@ body, p {
 
   height: 100%;
   width: 100%;
+}
+
+.main-goals > .goal-item > .goal-button:hover {
+  box-shadow: 0 10px 20px grey;
+
 }
 
 @media (max-width : 768px) {
@@ -247,6 +279,8 @@ body, p {
 }
 
 .main-goals > .goal-item > .goal-button > .goal-title {
+  font-size: 150%;
+  font-weight: bold;
 }
 
 .main-goals > .goal-item > .goal-button > .goal-body {
