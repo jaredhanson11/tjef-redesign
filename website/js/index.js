@@ -1,6 +1,13 @@
 $(document).ready(function() {
   /*//////// Event listeners ////////*/
 
+  /* Parallex scrolling function */
+  function parallaxScroll(currentScroll) {
+    const scrollSpeed = .25;
+    var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
+    $('body').css('background-position-y', backgroundScroll);
+  }
+
   //// Stick navbar to top ////
   var navBar = $('.nav-bar').first();
   $(window).scroll(function() {
@@ -14,6 +21,7 @@ $(document).ready(function() {
         navBar.removeClass('fixed-top');
         $('body').removeClass('navbar-offset');
     }
+    parallaxScroll(currentScroll);
   });
   //// End stick navbar to top ////
 

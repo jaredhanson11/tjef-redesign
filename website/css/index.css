@@ -11,7 +11,10 @@ body {
   --color-one: #2E392A; /* Forest */
   --color-two: #EFEFEF; /* Neutral */
   --color-three: #89cff0; /* Baby blue */
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/topography.png");
   background-color: var(--color-two);
+  background-postion: center;
+  background-attachment: fixed;
   color: var(--color-one);
 
   font-family: 'Bree Serif', serif;
@@ -30,23 +33,22 @@ body {
   top: 0;
   left: 0;
   position: absolute;
-  background-image: url('https://cdn.pixabay.com/photo/2017/02/26/00/22/colorful-2099182_960_720.png');
   background-size: cover;
 }
 
 .landing-screen > .landing-text {
   text-align: center;
-  padding-top: 60vh;
-  color: #2e392a;
-  font: serif;
+  padding-top: 45vh;
+  color: var(--color-one);
 }
 
-.landing-screen > .landing-title {
-  font-size: 36px;
+.landing-screen > .landing-text > .landing-title {
+  font-size: 500%;
+  font-weight: bold;
 }
 
-.landing-screen > .landing-subtitle {
-  font-size: 12px;
+.landing-screen > .landing-text > .landing-subtitle {
+  font-size: 150%;
 }
 /* Landing Screen */
 
@@ -76,7 +78,7 @@ body {
   height: 50px;
   /* End Sizing */
 
-  background: white;
+  background: var(--color-two);
   color: var(--color-one);
 }
 
