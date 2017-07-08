@@ -37,16 +37,16 @@ body {
 .landing-screen > .landing-text {
   text-align: center;
   padding-top: 60vh;
-  color: #fbfbea;
-  font: Helvetica;
+  color: #2e392a;
+  font: serif;
 }
 
 .landing-screen > .landing-title {
-  font-size: 400%;
+  font-size: 36px;
 }
 
 .landing-screen > .landing-subtitle {
-  font-size: 150%;
+  font-size: 12px;
 }
 /* Landing Screen */
 
