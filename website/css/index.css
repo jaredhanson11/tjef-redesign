@@ -11,7 +11,7 @@ body {
   --color-one: #2E392A; /* Forest */
   --color-two: #EFEFEF; /* Neutral */
   --color-three: #89cff0; /* Baby blue */
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/topography.png");
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/fresh_snow.png");
   background-color: var(--color-two);
   background-postion: center;
   background-attachment: fixed;
