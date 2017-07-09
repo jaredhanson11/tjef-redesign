@@ -1,12 +1,34 @@
+/* Parallex scrolling function */
+function parallaxScroll(currentScroll) {
+  const scrollSpeed = .25;
+  var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
+  $('body').css('background-position-y', backgroundScroll);
+}
+
+//// Persons boxes ////
+function setPersonItemHeight(personBoxes) {
+  personBoxes.each(function(){
+    var width = $(this).width();
+    $(this).height(width);
+  });
+};
+
+// Init height
+$(window).on('load', function(){
+  var personBoxes = $('.persons').children('.person-item');
+  setPersonItemHeight(personBoxes);
+});
+
+// On window resize
+$(window).resize(function(){
+  var personBoxes = $('.persons').children('.person-item');
+  setPersonItemHeight(personBoxes);
+});
+
+//// End Persons boxes ////
+
 $(document).ready(function() {
   /*//////// Event listeners ////////*/
-
-  /* Parallex scrolling function */
-  function parallaxScroll(currentScroll) {
-    const scrollSpeed = .25;
-    var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
-    $('body').css('background-position-y', backgroundScroll);
-  }
 
   //// Stick navbar to top ////
   var navBar = $('.nav-bar').first();
@@ -46,12 +68,32 @@ $(document).ready(function() {
         modalBackground.removeClass('active');
         modalBackground.empty();
       }
-    })
-  })
+    });
+  });
   //// End Pop up goal modal ////
 
+  //// Pop up person modal ////
+  var persons = $('.person-item');
+  persons.click(function(){
+    var modalBackground = $('.modal-background');
+    var modalContents = $(this).find('.person-content').clone();
+    modalContents.addClass('modal-contents');
+    modalBackground.addClass('active');
+    modalBackground.html(modalContents);
+    console.log(modalBackground);
+    modalBackground.click(function(event){
+      if (event.target === this){
+        modalBackground.removeClass('active');
+        modalBackground.empty();
+      }
+    });
+  });
+
+  //// End Pop up person modal ////
+
   /*//////// End Event listeners ////////*/
-})
+});
+
 function storyShortener (story) {
     var storyLength = story.length;
     if (storyLength > 200) {

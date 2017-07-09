@@ -80,6 +80,8 @@ body {
 
   background: var(--color-two);
   color: var(--color-one);
+
+  z-index: 1;
 }
 
 .nav-bar > .nav-item {
@@ -134,7 +136,7 @@ body {
   /* Font */
   text-align: center;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 250%;
   /* End Font */
 }
 
@@ -145,7 +147,7 @@ body {
 .section-intro > .intro-header {
   padding: 10px 0;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 125%;
 }
 
 .section-intro > .intro-summary {
@@ -158,6 +160,14 @@ body {
   padding: 10px 0;
 }
 
+.section-subtopic > .subtopic-title {
+  padding: 10px 0;
+
+  font-size: 200%;
+}
+/*/////////// End common section properties /////////// */
+
+/*/////////// Common modal properties /////////// */
 .modal-background.active {
   position: fixed;
   top: 0;
@@ -212,8 +222,7 @@ body {
 .modal-background > .modal-contents > .goal-body > p {
   padding: 5px 0;
 }
-
-/*/////////// End common section properties /////////// */
+/*/////////// Common modal properties /////////// */
 
 /*/////////// About TJEF section /////////// */
 
@@ -292,3 +301,58 @@ body {
 }
 
 /*/////////// End About TJEF section /////////// */
+
+/*/////////// Who we are section /////////// */
+.persons {
+}
+
+.persons > .person-item {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: calc(30%);
+  margin: 10px 1.66%;
+  border-radius: 50%;
+}
+
+@media (max-width : 768px) {
+  .persons > .person-item {
+    margin: 10px 5%;
+    width: calc(40%);
+  }
+
+}
+
+.persons > .person-item > .person-preview {
+}
+
+.persons > .person-item > .person-preview > .person-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.persons > .person-item > .person-preview > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.persons > .person-item > .person-content {
+  display: none;
+}
+
+.modal-background.active > .person-content.modal-content {
+}
+
+.person-content.modal-contents > img {
+  height: 50px;
+  width: 50px;
+}
+/*/////////// End Who we are section /////////// */
