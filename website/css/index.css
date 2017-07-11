@@ -356,3 +356,21 @@ body {
   width: 50px;
 }
 /*/////////// End Who we are section /////////// */
+
+/*//////////Contact Section///////////*/
+.section-contact {
+    text-align: center;
+    bottom: 0;
+    padding-top: 5vh;
+}
+
+.section-contact a {
+  text-decroration: none;
+  color: #2e392a;
+}
+
+.section-contact a:hover {
+  color: #94cca1;
+}
+
+/*/////////End Contact Section///////////*/
