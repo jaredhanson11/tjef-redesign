@@ -36,10 +36,10 @@ $(document).ready(function() {
     const windowHeight = $(window).height();
     const currentScroll = $(window).scrollTop();
     var fixedTop = navBar.hasClass('fixed-top');
-    if ((currentScroll > windowHeight) && (!fixedTop)) {
+    if ((currentScroll > 0) && (!fixedTop)) {
         navBar.addClass('fixed-top');
         $('body').addClass('navbar-offset');
-    } else if ((currentScroll < windowHeight) && (fixedTop)) {
+    } else if ((currentScroll <= 0) && (fixedTop)) {
         navBar.removeClass('fixed-top');
         $('body').removeClass('navbar-offset');
     }
