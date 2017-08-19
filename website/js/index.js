@@ -26,6 +26,83 @@ $(window).resize(function(){
 });
 
 //// End Persons boxes ////
+//// Nav-bar setup ////
+function sideNavToggle(closeOnly){
+  var sideNav = $('.side-nav');
+  var modalBackground = $('.modal-background');
+  if (sideNav.is(':visible') || closeOnly == true) {
+    sideNav.animate({
+      'width': '0'
+    }, function (){
+      sideNav.css('display', '');
+    });
+    modalBackground.fadeOut(function(){
+      modalBackground.removeClass('sidebar');
+      modalBackground.css('display','');
+    });
+  } else {
+    sideNav.css('display', 'flex');
+    modalBackground.addClass('sidebar');
+    modalBackground.fadeIn('fast');
+    sideNav.animate({
+      width: '33%'
+    }, function() {
+    });
+  }
+}
+
+function navBarSetup() {
+  function navItemsListen() {
+    $('.nav-item').click(function(){
+      var scrollTo = '.section#' + $(this).data('scroll-to');
+      var offset = $(scrollTo).offset().top - 50;
+      $('html, body').animate({
+        scrollTop: offset
+      }, 1000);
+      sideNavToggle(true);
+    })
+  };
+
+  function navBrandListen() {
+    $('.nav-brand').click(function(){
+      $('html, body').animate({
+        scrollTop: 0
+      }, 1000);
+    });
+  };
+
+  function navbarMenuListen() {
+    var sideNav = $('.side-nav');
+    $(window).resize(function(){
+      if ($(window).width() > 768) {
+        sideNavToggle(true);
+      }
+    });
+    sideNav.find('.exit-button').click(function() {
+      sideNavToggle(true);
+    });
+    $('.menu-button').click(function(){
+      sideNavToggle();
+    });
+  };
+
+  function setupSideBar() {
+    var sideNav = $('.side-nav');
+    var navItems = $('.nav-item').clone();
+    sideNav.append(navItems);
+
+    $('.modal-background').click(function(event){
+      if ($(this).hasClass('sidebar') && event.target === this) {
+        sideNavToggle(true);
+      }
+    })
+  };
+
+  setupSideBar();
+  navbarMenuListen();
+  navItemsListen();
+  navBrandListen();
+};
 
 $(document).ready(function() {
   /*//////// Event listeners ////////*/
@@ -38,22 +115,16 @@ $(document).ready(function() {
     var fixedTop = navBar.hasClass('fixed-top');
     if ((currentScroll > 0) && (!fixedTop)) {
         navBar.addClass('fixed-top');
-        $('body').addClass('navbar-offset');
     } else if ((currentScroll <= 0) && (fixedTop)) {
         navBar.removeClass('fixed-top');
-        $('body').removeClass('navbar-offset');
+        sideNavToggle(true);
     }
     parallaxScroll(currentScroll);
   });
   //// End stick navbar to top ////
 
-  //// Navbar dropdown menu ////
-  var dropdown = $('.nav-dropdown');
-  dropdown.hover(
-      handlerIn=function(){$('.dropdown').slideDown();},
-      handlerOut=function(){$('.dropdown').slideUp();}
-  )
-  //// End Navbar dropdown menu ////
+  navBarSetup();
+
 
   //// Pop up goal modal ////
   var goalButton = $('.goal-button');
@@ -80,24 +151,16 @@ $(document).ready(function() {
     modalContents.addClass('modal-contents');
     modalBackground.addClass('active');
     modalBackground.html(modalContents);
-    console.log(modalBackground);
-    modalBackground.click(function(event){
-      if (event.target === this){
-        modalBackground.removeClass('active');
-        modalBackground.empty();
-      }
-    });
   });
+  $('.modal-background').click(function(event){
+    if ($(this).hasClass('active') && event.target === this){
+      $(this).removeClass('active');
+      $(this).empty();
+    }
+  });
+
 
   //// End Pop up person modal ////
 
   /*//////// End Event listeners ////////*/
 });
-
-function storyShortener (story) {
-    var storyLength = story.length;
-    if (storyLength > 200) {
-        var shortStory = story.substring(0, 200);
-        return shortStory;
-    };
-};
