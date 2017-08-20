@@ -310,6 +310,12 @@ body {
   overflow: auto;
 }
 
+.modal-background > .modal-contents > .exit > .exit-button {
+  position: fixed;
+  z-index: 4;
+  background-color: var(--color-two);
+}
+
 @media (max-width : 768px) {
   .modal-background > .modal-contents {
   }
