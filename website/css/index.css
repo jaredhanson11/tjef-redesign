@@ -168,6 +168,20 @@ body {
   cursor: pointer;
 }
 
+.exit {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.exit > .exit-button {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
 @media (max-width : 768px) {
   .nav-bar > .nav-brand {
     width: 25%;
@@ -185,20 +199,6 @@ body {
 
   .nav-bar > .nav-items {
     display: none;
-  }
-
-  .side-nav > .exit {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
-  }
-
-  .exit > .exit-button {
-    font-size: 1.5em;
-    cursor: pointer;
   }
 
   .side-nav > .nav-item {

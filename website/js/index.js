@@ -25,6 +25,17 @@ $(window).resize(function(){
   setPersonItemHeight(personBoxes);
 });
 
+function exitButton() {
+  return $('<div/>', {'class': 'exit'})
+    .append($('<div/>', {'class': 'exit-button'})
+        .html('&#10006;'));
+}
+
+function closeModal() {
+  $('.modal-background').removeClass('active');
+  $('.modal-contents').remove();
+}
+
 //// End Persons boxes ////
 //// Nav-bar setup ////
 function sideNavToggle(closeOnly){
@@ -132,14 +143,12 @@ $(document).ready(function() {
     var modalBackground = $('.modal-background');
     var modalContents = $(this).clone();
     modalContents.addClass('modal-contents');
-    modalBackground.addClass('active');
-    modalBackground.html(modalContents);
-    modalBackground.click(function(event){
-      if (event.target === this){
-        modalBackground.removeClass('active');
-        modalBackground.empty();
-      }
+    modalContents.prepend(exitButton());
+    modalContents.find('.exit-button').click(function(){
+      closeModal();
     });
+    modalBackground.addClass('active');
+    modalBackground.append(modalContents);
   });
   //// End Pop up goal modal ////
 
@@ -149,16 +158,19 @@ $(document).ready(function() {
     var modalBackground = $('.modal-background');
     var modalContents = $(this).find('.person-content').clone();
     modalContents.addClass('modal-contents');
+    modalContents.prepend(exitButton());
+    modalContents.find('.exit-button').click(function(){
+      closeModal();
+    });
     modalBackground.addClass('active');
-    modalBackground.html(modalContents);
-  });
-  $('.modal-background').click(function(event){
-    if ($(this).hasClass('active') && event.target === this){
-      $(this).removeClass('active');
-      $(this).empty();
-    }
+    modalBackground.append(modalContents);
   });
 
+  $('.modal-background').click(function(event){
+    if ($(this).hasClass('active') && event.target === this){
+      closeModal();
+    }
+  });
 
   //// End Pop up person modal ////
 
