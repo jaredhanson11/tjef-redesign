@@ -100,6 +100,7 @@ function navBarSetup() {
   function setupSideBar() {
     var sideNav = $('.side-nav');
     var navItems = $('.nav-item').clone();
+    sideNav.append(exitButton());
     sideNav.append(navItems);
 
     $('.modal-background').click(function(event){
