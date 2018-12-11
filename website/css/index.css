@@ -10,7 +10,7 @@ body, p {
 body {
   --color-one: #2E392A; /* Forest */
   --color-two: #EFEFEF; /* Neutral */
-  --color-three: #89cff0; /* Baby blue */
+  --color-three: #37532d; /* Baby blue */
   background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/fresh_snow.png");
   background-color: var(--color-two);
   background-postion: center;
@@ -38,17 +38,17 @@ body {
 
 .landing-screen > .landing-text {
   text-align: center;
-  padding-top: 45vh;
+  padding-top: 35vh;
   color: var(--color-one);
 }
 
 .landing-screen > .landing-text > .landing-title {
-  font-size: 500%;
+  font-size: 800%;
   font-weight: bold;
 }
 
 .landing-screen > .landing-text > .landing-subtitle {
-  font-size: 150%;
+  font-size: 250%;
 }
 /* Landing Screen */
 
@@ -409,8 +409,14 @@ body {
 }
 
 .main-goals > .goal-item > .goal-button > .goal-title {
-  font-size: 150%;
+  font-size: 250%;
   font-weight: bold;
+  color: var(--color-two);
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 .main-goals > .goal-item > .goal-button > .goal-body {

@@ -38,7 +38,7 @@ function closeModal() {
 
 //// End Persons boxes ////
 //// Nav-bar setup ////
-function sideNavToggle(closeOnly){
+/*function sideNavToggle(closeOnly){
   var sideNav = $('.side-nav');
   var modalBackground = $('.modal-background');
   if (sideNav.is(':visible') || closeOnly == true) {
@@ -115,10 +115,12 @@ function navBarSetup() {
   navItemsListen();
   navBrandListen();
 };
+*/
 
 $(document).ready(function() {
   /*//////// Event listeners ////////*/
 
+/*
   //// Stick navbar to top ////
   var navBar = $('.nav-bar').first();
   $(window).scroll(function() {
@@ -136,7 +138,7 @@ $(document).ready(function() {
   //// End stick navbar to top ////
 
   navBarSetup();
-
+*/
 
   //// Pop up goal modal ////
   var goalButton = $('.goal-button');
