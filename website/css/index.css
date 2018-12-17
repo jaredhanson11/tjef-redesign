@@ -328,7 +328,10 @@ body {
   /* Text */
   text-align: center;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 150%;
+
+  border-bottom: medium var(--color-one) solid;
+  margin-bottom: 1%;
 
   /* Position */
   padding: 5px 0;
@@ -409,7 +412,7 @@ body {
 }
 
 .main-goals > .goal-item > .goal-button > .goal-title {
-  font-size: 250%;
+  font-size: 150%;
   font-weight: bold;
   color: var(--color-two);
   text-shadow:
@@ -432,6 +435,13 @@ body {
   flex-direction: column;
 }
 
+.application > div {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
 .application > .application-header {
   width: 100%;
   color: white;
@@ -447,16 +457,24 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .application > .application-line > .line-answer {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 
-.application > .application-line > .line-answer > div {
+/* Override for padding between application elements */
+.application > .line-answer {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.application .line-answer > div {
   border-bottom: thin solid black;
   width: 100%;
 }
@@ -556,6 +574,11 @@ body {
     text-align: center;
     bottom: 0;
     padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+
+.section-contact > .contact-title {
+    font-size: 125%
 }
 
 .section-contact a {
