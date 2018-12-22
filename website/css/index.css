@@ -569,6 +569,36 @@ body {
 }
 /*/////////// End Who we are section /////////// */
 
+/*/////////// Splotlight section /////////// */
+.section#spotlight {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 5vh;
+    width: 80 vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#spotlight > .spotlight-header {
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+
+#spotlight > .spotlight-description {
+    text-align: justify;
+    font-size: .8em;
+}
+
+#spotlight > .spotlight-picture > img {
+    width: 100%;
+}
+
+/*/////////// End Splotlight section /////////// */
+
 /*//////////Contact Section///////////*/
 .section-contact {
     text-align: center;
