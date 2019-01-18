@@ -7,7 +7,7 @@ function parallaxScroll(currentScroll) {
 
 var intervalId;
 function slideShow() {
-  intervalId = setInterval(nextSlide, 5000);
+  intervalId = setInterval(nextSlide, 3000);
 }
 
 slideShow()
@@ -22,29 +22,28 @@ function nextSlide() {
     if (slideIndex == 3)
       slideIndex = 0
 
-    var varName = 'slide' + (Number(slideIndex) + 1)
-    document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
-    document.getElementById('spotlight-description').innerHTML = window[varName].desc
-
-    //takes care of dots
     var dots = document.getElementsByClassName("dot")
     for (i = 0; i < dots.length; i++)
       dots[i].className = dots[i].className.replace(" active", "")
     dots[slideIndex].className += " active"
+
+    var varName = 'slide' + (Number(slideIndex) + 1)
+    document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
+    document.getElementById('spotlight-description').innerHTML = window[varName].desc
   })
 }
 
 function changeSlide(n) {
   clearInterval(intervalId)
 
+    var dots = document.getElementsByClassName("dot")
+  for (i = 0; i < dots.length; i++)
+    dots[i].className = dots[i].className.replace(" active", "")  
+  dots[n-1].className += " active"
+
   var varName = 'slide' + n
   document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
   document.getElementById('spotlight-description').innerHTML = window[varName].desc
-
-  var dots = document.getElementsByClassName("dot")
-  for (i = 0; i < dots.length; i++)
-    dots[i].className = dots[i].className.replace(" active", "")  
-  dots[n].className += " active"
 
   slideShow()
 }
