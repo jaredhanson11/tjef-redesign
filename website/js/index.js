@@ -5,6 +5,50 @@ function parallaxScroll(currentScroll) {
   $('body').css('background-position-y', backgroundScroll);
 }
 
+var intervalId;
+function slideShow() {
+  intervalId = setInterval(nextSlide, 5000);
+}
+
+slideShow()
+
+function nextSlide() {
+  $(document).ready(function() {
+    //gets current slide number
+    var imageSrc = document.getElementById('spotlightImg').getAttribute('src')
+    var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
+
+    //makes sure slide number won't go out of bounds
+    if (slideIndex == 3)
+      slideIndex = 0
+
+    var varName = 'slide' + (Number(slideIndex) + 1)
+    document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
+    document.getElementById('spotlight-description').innerHTML = window[varName].desc
+
+    //takes care of dots
+    var dots = document.getElementsByClassName("dot")
+    for (i = 0; i < dots.length; i++)
+      dots[i].className = dots[i].className.replace(" active", "")
+    dots[slideIndex].className += " active"
+  })
+}
+
+function changeSlide(n) {
+  clearInterval(intervalId)
+
+  var varName = 'slide' + n
+  document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
+  document.getElementById('spotlight-description').innerHTML = window[varName].desc
+
+  var dots = document.getElementsByClassName("dot")
+  for (i = 0; i < dots.length; i++)
+    dots[i].className = dots[i].className.replace(" active", "")  
+  dots[n].className += " active"
+
+  slideShow()
+}
+
 //// Persons boxes ////
 function setPersonItemHeight(personBoxes) {
   personBoxes.each(function(){
