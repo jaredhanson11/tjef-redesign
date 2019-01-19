@@ -4,49 +4,64 @@ function parallaxScroll(currentScroll) {
   var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
   $('body').css('background-position-y', backgroundScroll);
 }
-
-var intervalId;
-function slideShow() {
+////Spotlight section////
+var intervalId
+function startSlideShow() {
   intervalId = setInterval(nextSlide, 3000);
 }
 
-slideShow()
+function stopSlideShow() {
+  clearInterval(intervalId)
+}
+
+$(document).ready(function() {
+  startSlideShow()
+
+  $('.dot:first').click(function() {
+  stopSlideShow()
+  changeSlide(1)
+  startSlideShow()
+  })
+
+  $('.dot:nth-child(2)').click(function() {
+  stopSlideShow()
+  changeSlide(2)
+  startSlideShow()
+  })
+
+  $('.dot:last').click(function() {
+  stopSlideShow()
+  changeSlide(3)
+  startSlideShow()
+  })
+})
 
 function nextSlide() {
-  $(document).ready(function() {
     //gets current slide number
-    var imageSrc = document.getElementById('spotlightImg').getAttribute('src')
+
+    var imageSrc = $('#spotlightImg').fadeOut().attr('src')
     var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
 
-    //makes sure slide number won't go out of bounds
     if (slideIndex == 3)
       slideIndex = 0
 
-    var dots = document.getElementsByClassName("dot")
-    for (i = 0; i < dots.length; i++)
-      dots[i].className = dots[i].className.replace(" active", "")
-    dots[slideIndex].className += " active"
-
-    var varName = 'slide' + (Number(slideIndex) + 1)
-    document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
-    document.getElementById('spotlight-description').innerHTML = window[varName].desc
-  })
+    changeSlide(Number(slideIndex) + 1)
 }
 
 function changeSlide(n) {
-  clearInterval(intervalId)
+  $('#spotlightImg').fadeOut(1000, function() {
+    var dots = $('.dot')
+    for (i = 0; i < dots.length; i++)
+      dots[i].className = dots[i].className.replace(' active', '')
+    dots[n-1].className += ' active'
 
-    var dots = document.getElementsByClassName("dot")
-  for (i = 0; i < dots.length; i++)
-    dots[i].className = dots[i].className.replace(" active", "")  
-  dots[n-1].className += " active"
+    var varName = 'slide' + n
+    $('#spotlightImg').fadeIn().attr('src', window[varName].imageSrc)
+    $('#spotlight-description').html(window[varName].desc)
 
-  var varName = 'slide' + n
-  document.getElementById('spotlightImg').setAttribute('src', window[varName].imageSrc)
-  document.getElementById('spotlight-description').innerHTML = window[varName].desc
-
-  slideShow()
+  }).fadeIn(1000)
 }
+////End spotlight sections////
 
 //// Persons boxes ////
 function setPersonItemHeight(personBoxes) {
