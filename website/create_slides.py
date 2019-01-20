@@ -26,7 +26,7 @@ while i < len(txtFiles):
 			data_file.write('\n')
 	else:
 		with open('./js/spotlight.json', 'w') as data_file:
-			data_file.write(var_template % ('slideTotal', len(txtFiles)))
+			data_file.write(var_template % ('slideTotal', len(txtFiles)-1))
 			data_file.write('\n')
 			data_file.write(item_entry)
 			data_file.write('\n')
