@@ -9,8 +9,9 @@ function parallaxScroll(currentScroll) {
 function changeSlide(n, fadeSpeed) {
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
-    for (i = 0; i < dots.length; i++)
+    for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(' active', '')
+    }
     dots[n-1].className += ' active'
 
     var varName = 'slide' + n
@@ -53,38 +54,13 @@ $(document).ready(function() {
   createDots()
   startSlideShow()
 
-  /*var dots = $('.dot')
-  for (var i = 0; i < dots.length; i++) {
-    dots[i].click(function() {
+  $('.dot').each(function(index){
+    $(this).click(function() {
       stopSlideShow()
-      console.log(i)
-      changeSlide(i+1, 100)
-      startSlideShow()
-    })
-  }*/
-
-  $('.dot:first').click(function() {
-  stopSlideShow()
-  changeSlide(1, 100)
-  //setTimeout(nextSlide(), 5000)
-  startSlideShow()
-  })
-
-  $('.dot:nth-child(2)').click(function() {
-  stopSlideShow()
-  changeSlide(2, 100)
-  //setTimeout(nextSlide(), 5000)
-  startSlideShow()
-  
-  })
-
-  $('.dot:last').click(function() {
-  stopSlideShow()
-  changeSlide(3, 100)
-  //setTimeout(nextSlide(), 5000)
-  startSlideShow()
-  })
-
+      changeSlide(index + 1, 100);
+      startSlideShow();
+    });
+  });
 })
 ////End spotlight sections////
 
