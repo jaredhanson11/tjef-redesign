@@ -6,7 +6,6 @@ function parallaxScroll(currentScroll) {
 }
 
 ////Spotlight section////
-var numSlides = 3
 function changeSlide(n, fadeSpeed) {
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
@@ -26,26 +25,32 @@ function nextSlide() {
     var imageSrc = $('#spotlightImg').fadeOut().attr('src')
     var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
 
-    if (slideIndex == numSlides)
+    if (slideIndex == slideTotal)
       slideIndex = 0
 
     changeSlide(Number(slideIndex) + 1, 750)
+}
+
+function createDots() {
+  $('<span class="dot active"></span>').appendTo('#dots')
+  for (var i = 0; i < (slideTotal-1); i++) {
+    $('<span class="dot"></span>').appendTo('#dots')
+  }
 }
 
 var intervalId
 var slideShowStatus
 function startSlideShow() {
   intervalId = setInterval(nextSlide, 30000)
-  slideShowStatus = true
 }
 
 function stopSlideShow() {
   clearInterval(intervalId)
-  slideShowStatus = false
 }
 
 //dot event listeners
 $(document).ready(function() {
+  createDots()
   startSlideShow()
 
   /*var dots = $('.dot')
