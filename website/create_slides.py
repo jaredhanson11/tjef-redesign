@@ -1,8 +1,11 @@
 import json
+import os
+
 slide = {'imageSrc': None, 'desc': None}
 
+txtFiles = os.listdir('./txt/')
 i = 1
-while i < 4:
+while i < len(txtFiles):
 	slide['imageSrc'] = './img/spotlight' + str(i) + '.png'
 	
 	with open('./txt/spotlight' + str(i) + '.txt', 'r') as desc:
