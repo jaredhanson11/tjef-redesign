@@ -4,52 +4,11 @@ function parallaxScroll(currentScroll) {
   var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
   $('body').css('background-position-y', backgroundScroll);
 }
+
 ////Spotlight section////
-var intervalId
-function startSlideShow() {
-  intervalId = setInterval(nextSlide, 3000);
-}
-
-function stopSlideShow() {
-  clearInterval(intervalId)
-}
-
-$(document).ready(function() {
-  startSlideShow()
-
-  $('.dot:first').click(function() {
-  stopSlideShow()
-  changeSlide(1)
-  startSlideShow()
-  })
-
-  $('.dot:nth-child(2)').click(function() {
-  stopSlideShow()
-  changeSlide(2)
-  startSlideShow()
-  })
-
-  $('.dot:last').click(function() {
-  stopSlideShow()
-  changeSlide(3)
-  startSlideShow()
-  })
-})
-
-function nextSlide() {
-    //gets current slide number
-
-    var imageSrc = $('#spotlightImg').fadeOut().attr('src')
-    var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
-
-    if (slideIndex == 3)
-      slideIndex = 0
-
-    changeSlide(Number(slideIndex) + 1)
-}
-
-function changeSlide(n) {
-  $('#spotlightImg').fadeOut(1000, function() {
+var numSlides = 3
+function changeSlide(n, fadeSpeed) {
+  $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
     for (i = 0; i < dots.length; i++)
       dots[i].className = dots[i].className.replace(' active', '')
@@ -59,8 +18,69 @@ function changeSlide(n) {
     $('#spotlightImg').fadeIn().attr('src', window[varName].imageSrc)
     $('#spotlight-description').html(window[varName].desc)
 
-  }).fadeIn(1000)
+  }).fadeIn(fadeSpeed)
 }
+
+function nextSlide() {
+
+    var imageSrc = $('#spotlightImg').fadeOut().attr('src')
+    var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
+
+    if (slideIndex == numSlides)
+      slideIndex = 0
+
+    changeSlide(Number(slideIndex) + 1, 750)
+}
+
+var intervalId
+var slideShowStatus
+function startSlideShow() {
+  intervalId = setInterval(nextSlide, 30000)
+  slideShowStatus = true
+}
+
+function stopSlideShow() {
+  clearInterval(intervalId)
+  slideShowStatus = false
+}
+
+//dot event listeners
+$(document).ready(function() {
+  startSlideShow()
+
+  /*var dots = $('.dot')
+  for (var i = 0; i < dots.length; i++) {
+    dots[i].click(function() {
+      stopSlideShow()
+      console.log(i)
+      changeSlide(i+1, 100)
+      startSlideShow()
+    })
+  }*/
+
+  $('.dot:first').click(function() {
+  stopSlideShow()
+  changeSlide(1, 100)
+  //setTimeout(nextSlide(), 5000)
+  startSlideShow()
+  })
+
+  $('.dot:nth-child(2)').click(function() {
+  stopSlideShow()
+  changeSlide(2, 100)
+  //setTimeout(nextSlide(), 5000)
+  startSlideShow()
+  
+  })
+
+  $('.dot:last').click(function() {
+  stopSlideShow()
+  changeSlide(3, 100)
+  //setTimeout(nextSlide(), 5000)
+  startSlideShow()
+  })
+
+})
 ////End spotlight sections////
 
 //// Persons boxes ////
