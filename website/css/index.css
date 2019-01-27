@@ -613,8 +613,26 @@ body {
 }
 
 #spotlight > .spotlight-picture > img {
-    width: 100%;
+    vertical-align: center;
+    height: 80vh;
+    max-width: 110%;
     border-radius: 20px;
+}
+
+.arrow {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #bbb;
+  padding-top: 0px;
+}
+
+.arrow:hover {
+  color: #717171;
 }
 
 #dots {
@@ -632,9 +650,11 @@ body {
   cursor: pointer;
 }
 
-.active, .dot:hover{
+.active, .dot:hover {
   background-color: #717171;
 }
+
+
 
 
 /*/////////// End Spotlight section /////////// */

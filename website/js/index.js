@@ -6,7 +6,9 @@ function parallaxScroll(currentScroll) {
 }
 
 ////Spotlight section////
+
 function changeSlide(n, fadeSpeed) {
+  console.log(slideTotal)
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
     for (i = 0; i < dots.length; i++) {
@@ -19,30 +21,55 @@ function changeSlide(n, fadeSpeed) {
     $('#spotlight-description').html(window[varName].desc)
 
   }).fadeIn(fadeSpeed)
+  //fixSize($('#spotlightImg'))
 }
 
-function nextSlide() {
-
+function nextSlide(fadeSpeed) {
     var imageSrc = $('#spotlightImg').fadeOut().attr('src')
     var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
 
     if (slideIndex == slideTotal)
       slideIndex = 0
 
-    changeSlide(Number(slideIndex) + 1, 750)
+    changeSlide(Number(slideIndex) + 1, fadeSpeed)
+}
+
+function lastSlide(fadeSpeed) {
+  var imageSrc = $('#spotlightImg').attr('src')
+  var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
+
+  if (slideIndex == 1)
+    slideIndex = slideTotal + 1
+
+  changeSlide(Number(slideIndex) - 1, fadeSpeed)
 }
 
 function createDots() {
+  $('<span  class="arrow left">❮</span>').appendTo('#dots')
   $('<span class="dot active"></span>').appendTo('#dots')
   for (var i = 0; i < (slideTotal-1); i++) {
     $('<span class="dot"></span>').appendTo('#dots')
   }
+  $('<span class="arrow right">❯</span>').appendTo('#dots')
+}
+
+function fixSize(image) {
+  console.log(image.width())
+  if (image.width() < '100%') {
+    image.width('100%')
+    console.log(image.width())
+  }
+  
+  //if (image.height < maxHeight) {
+    //var paddingAddString = Number(maxHeight - image.height) + 'px'
+    //$(image).css({'padding-top': paddingAddString})
+  //}
 }
 
 var intervalId
-var slideShowStatus
+
 function startSlideShow() {
-  intervalId = setInterval(nextSlide, 30000)
+  intervalId = setInterval(nextSlide(750), 30000)
 }
 
 function stopSlideShow() {
@@ -51,6 +78,7 @@ function stopSlideShow() {
 
 //dot event listeners
 $(document).ready(function() {
+  changeSlide(1, 10)
   createDots()
   startSlideShow()
 
@@ -61,6 +89,18 @@ $(document).ready(function() {
       startSlideShow();
     });
   });
+
+  $('.right').click(function() {
+    stopSlideShow()
+    nextSlide(10)
+    startSlideShow()
+  })
+
+  $('.left').click(function() {
+    stopSlideShow()
+    lastSlide(10)
+    startSlideShow()
+  })
 })
 ////End spotlight sections////
 
