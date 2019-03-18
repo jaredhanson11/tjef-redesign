@@ -7,7 +7,7 @@ function parallaxScroll(currentScroll) {
 
 ////Spotlight section////
 
-function changeSlide(n, fadeSpeed) {
+/*function changeSlide(n, fadeSpeed) {
   console.log("changeSlide called")
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
@@ -103,7 +103,7 @@ $(document).ready(function() {
     lastSlide(10)
     startSlideShow()
   })
-})
+})*/
 ////End spotlight sections////
 
 //// Persons boxes ////
