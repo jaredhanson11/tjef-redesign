@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+/* CSS Resets */
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables */
+body {
+  --color-one: #2E392A; /* Forest */
+  --color-two: #EFEFEF; /* Neutral */
+  --color-three: #37532d; /* Baby blue */
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/fresh_snow.png");
+  background-color: var(--color-two);
+  background-postion: center;
+  background-attachment: fixed;
+  color: var(--color-one);
+
+  font-family: 'Bree Serif', serif;
+  /*font-family: 'Lato', sans-serif;*/
+}
+
+/* Landing Screen */
+.landing-screen {
+  height: 100vh;
+}
+
+.landing-screen > .landing-image {
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
+}
+
+.landing-screen > .landing-text {
+  text-align: center;
+  padding-top: 35vh;
+  color: var(--color-one);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+}
+
+
+@media (max-width : 768px) {
+  .landing-screen > .landing-text > img {
+    width: 80vw;
+  }
+}
+
+.landing-screen > .landing-text > .landing-title {
+  font-size: 800%;
+  font-weight: bold;
+}
+
+.landing-screen > .landing-text > .landing-subtitle {
+  font-size: 250%;
+}
+/* Landing Screen */
+
+/*///////////// Nav bar related css /////////////*/
+.fixed-top {
+/* Class added to navbar when scrolled past homescreen */
+  display: flex !important;
+  position: fixed;
+  top: 0;
+}
+
+.nav-bar {
+  /* Flexbox container */
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  /* End flexbox */
+
+  /* Sizing */
+  width: 100%;
+  height: 50px;
+  /* End Sizing */
+
+  background: var(--color-two);
+  color: var(--color-one);
+
+  z-index: 1;
+
+  box-shadow: 0 3px 3px lightgrey;
+}
+
+.nav-bar > .nav-brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  width: 15%;
+  height: 100%;
+}
+
+.nav-brand img {
+  height: 75%;
+  cursor: pointer;
+}
+
+.nav-bar > .menu-button {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-bar > .menu-button > img {
+  height: 85%;
+}
+
+.nav-bar > .nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  width: 50%;
+  height: 100%;
+}
+
+.nav-items > .nav-item {
+  /* Flexbox container */
+  /* This vertically aligns the text in nav-item */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End Flexbox container */
+
+  /* Sizing */
+  height: 100%;
+  /* End Sizing */
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink 1;
+}
+
+.nav-items > .nav-item:hover {
+  background-color: grey;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.side-nav {
+  position: fixed;
+  top: 51px;
+  right: 0;
+
+  width: 0%;
+  height: calc(100% - 53px);
+
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+
+  background-color: var(--color-one);
+  color: white;
+  z-index: 3;
+
+  font-size: 1.2em;
+}
+
+.side-nav > .nav-item:hover {
+  background-color: #586f4e;
+  cursor: pointer;
+}
+
+.exit {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.exit > .exit-button {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+@media (max-width : 768px) {
+  .nav-bar > .nav-brand {
+    width: 25%;
+  }
+
+  .nav-bar > .menu-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    height: 45px;
+    margin-right: 10px;
+  }
+
+  .nav-bar > .nav-items {
+    display: none;
+  }
+
+  .side-nav > .nav-item {
+    line-height: 300%;
+    width: 100%;
+    text-align: center;
+  }
+}
+/*/////////// End Nav bar related css /////////// */
+
+/*/////////// Common section properties /////////// */
+.section {
+  width: 65%;
+  margin: auto;
+}
+
+@media (max-width : 768px) {
+  .section {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+.section-title {
+  /* Positioning */
+  padding: 30px 0 10px 0;
+  /* End Positioning */
+
+  /* Font */
+  text-align: center;
+  font-weight: bold;
+  font-size: 250%;
+  /* End Font */
+}
+
+.section-intro {
+  padding: 10px 0;
+}
+
+.section-intro > .intro-header {
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 125%;
+}
+
+.section-intro > .intro-summary {
+  padding: 10px 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-intro > .intro-summary > p {
+  padding: 10px 0;
+}
+
+.section-subtopic > .subtopic-title {
+  padding: 10px 0;
+
+  font-size: 200%;
+}
+/*/////////// End common section properties /////////// */
+
+/*/////////// Common modal properties /////////// */
+.modal-background.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,.8);
+
+  z-index: 2;
+}
+
+.modal-background.sidebar {
+  position: fixed;
+  top: 51px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  display: none;
+
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,.8);
+
+  z-index: 2;
+
+}
+
+.modal-background > .modal-contents {
+  padding: 20px;
+
+  height: 60vh;
+  width: 75vw;
+  max-width: 768px;
+
+  background: var(--color-two);
+  box-shadow: 0 3px 7px grey;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.modal-background > .modal-contents > .exit > .exit-button {
+  position: fixed;
+  z-index: 4;
+  background-color: var(--color-two);
+}
+
+@media (max-width : 768px) {
+  .modal-background > .modal-contents {
+  }
+}
+
+.modal-background > .modal-contents .exit-modal {
+}
+
+.modal-background > .modal-contents > .goal-title {
+  /* Text */
+  text-align: center;
+  font-weight: bold;
+  font-size: 150%;
+
+  border-bottom: medium var(--color-one) solid;
+  margin-bottom: 1%;
+
+  /* Position */
+  padding: 5px 0;
+}
+
+.modal-background > .modal-contents  > .goal-body {
+}
+
+.modal-background > .modal-contents > .goal-body > p {
+  padding: 5px 0;
+}
+/*/////////// Common modal properties /////////// */
+
+/*/////////// About TJEF section /////////// */
+
+.main-goals {
+  /* Flex */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End Flex */
+}
+
+.main-goals > .goal-item {
+  /* Flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* End Flex container */
+
+  padding: 10px;
+
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink 1;
+
+  height: 30vh;
+  width: 100%;
+}
+
+.main-goals > .goal-item > .goal-button {
+  cursor: pointer;
+
+  border-radius: 20px;
+  box-shadow: 0 3px 7px grey;
+  background: var(--color-three);
+
+  padding-left: 2%;
+  padding-right: 2%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.main-goals > .goal-item > .goal-button:hover {
+  box-shadow: 0 10px 20px grey;
+}
+
+@media (max-width : 768px) {
+  .main-goals {
+    flex-direction: column;
+  }
+
+  .main-goals > .goal-item {
+    height: 30vh;
+  }
+
+  .main-goals > .goal-item > .goal-button {
+    width: 75%;
+  }
+}
+
+.main-goals > .goal-item > .goal-button > .goal-title {
+  font-size: 150%;
+  font-weight: bold;
+  color: var(--color-two);
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.main-goals > .goal-item > .goal-button > .goal-body {
+  display: none;
+}
+
+.indented {
+  padding-left: 4%;
+}
+
+/* TJEF Application */
+
+.modal-background > .modal-contents > .goal-body > .application {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.application > div {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.application > .application-header {
+  width: 100%;
+  color: white;
+  background-color: var(--color-one);
+  font-weight: bold;
+  text-align: center;
+}
+
+.application > .application-line {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.application > .application-line > .line-answer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+/* Override for padding between application elements */
+.application > .line-answer {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.application .line-answer > div {
+  border-bottom: thin solid black;
+  width: 100%;
+}
+
+.center-text {
+  width: 65%;
+  margin: 0 auto;
+}
+
+@media (max-width : 768px) {
+}
+
+#quote {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*/////////// End About TJEF section /////////// */
+
+/*/////////// Who we are section /////////// */
+.persons {
+}
+
+.persons > .person-item {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: calc(30%);
+  margin: 10px 1.66%;
+  border-radius: 50%;
+}
+
+@media (max-width : 768px) {
+  .persons > .person-item {
+    margin: 10px 5%;
+    width: calc(40%);
+  }
+
+}
+
+.persons > .person-item > .person-preview {
+}
+
+.persons > .person-item > .person-preview > .person-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.persons > .person-item > .person-preview > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.persons > .person-item > .person-content {
+  display: none;
+}
+
+.person-content.modal-contents {
+  max-width: 500px;
+}
+
+.person-content.modal-contents > .content-header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.person-content.modal-contents > .content-header > img {
+  height: 150px;
+  width: 150px;
+}
+
+.person-content.modal-contents > .content-header > .person-name {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.person-content.modal-contents > .content-body > .youtube-story {
+  max-width: 350px;
+  float: right;
+}
+
+.person-content.modal-contents > .content-body > .youtube-story > iframe {
+  width: 100%;
+  height: 100%;
+}
+/*/////////// End Who we are section /////////// */
+
+/*/////////// Splotlight section /////////// */
+.section#spotlight {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 5vh;
+    width: 80 vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#spotlight > .spotlight-header {
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+
+#spotlight > #spotlight-description {
+    text-align: justify;
+    font-size: .8em;
+}
+
+#spotlight > .spotlight-picture > img {
+    vertical-align: center;
+    height: 80vh;
+    max-width: 110%;
+    border-radius: 20px;
+}
+
+.arrow {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 2px;
+  color: #bbb;
+  padding-top: 0px;
+}
+
+.arrow:hover {
+  color: #717171;
+}
+
+#dots {
+  text-align: center;
+}
+
+.dot {
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+
+
+/*/////////// End Spotlight section /////////// */
+
+/*//////////Contact Section///////////*/
+.section-contact {
+    text-align: center;
+    bottom: 0;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+
+.section-contact > .contact-title {
+    font-size: 125%
+}
+
+.section-contact a {
+  text-decroration: none;
+  color: #2e392a;
+}
+
+.section-contact a:hover {
+  color: #94cca1;
+}
+
+/*/////////End Contact Section///////////*/
