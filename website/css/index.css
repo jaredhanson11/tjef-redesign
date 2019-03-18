@@ -506,6 +506,12 @@ body {
 @media (max-width : 768px) {
 }
 
+#quote {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 /*/////////// End About TJEF section /////////// */
 
 /*/////////// Who we are section /////////// */
@@ -627,6 +633,7 @@ body {
   width: 16px;
   border-radius: 50%;
   cursor: pointer;
+  margin: 0 2px;
   color: #bbb;
   padding-top: 0px;
 }

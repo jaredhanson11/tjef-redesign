@@ -8,7 +8,7 @@ function parallaxScroll(currentScroll) {
 ////Spotlight section////
 
 function changeSlide(n, fadeSpeed) {
-  console.log(slideTotal)
+  console.log("changeSlide called")
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
     for (i = 0; i < dots.length; i++) {
@@ -17,7 +17,7 @@ function changeSlide(n, fadeSpeed) {
     dots[n-1].className += ' active'
 
     var varName = 'slide' + n
-    $('#spotlightImg').fadeIn().attr('src', window[varName].imageSrc)
+    $('#spotlightImg').attr('src', window[varName].imageSrc)
     $('#spotlight-description').html(window[varName].desc)
 
   }).fadeIn(fadeSpeed)
@@ -35,13 +35,14 @@ function nextSlide(fadeSpeed) {
 }
 
 function lastSlide(fadeSpeed) {
-  var imageSrc = $('#spotlightImg').attr('src')
+  console.log("lastSlide called")
+  var imageSrc = $('#spotlightImg').fadeOut().attr('src')
   var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
 
   if (slideIndex == 1)
-    slideIndex = slideTotal + 1
+    slideIndex = slideTotal
 
-  changeSlide(Number(slideIndex) - 1, fadeSpeed)
+  changeSlide(Number(slideIndex), fadeSpeed)
 }
 
 function createDots() {
@@ -69,16 +70,16 @@ function fixSize(image) {
 var intervalId
 
 function startSlideShow() {
-  intervalId = setInterval(nextSlide(750), 30000)
+
+  intervalId = setTimeout(nextSlide(750), 30000)
 }
 
 function stopSlideShow() {
-  clearInterval(intervalId)
+  clearTimeout(intervalId)
 }
 
 //dot event listeners
 $(document).ready(function() {
-  changeSlide(1, 10)
   createDots()
   startSlideShow()
 
@@ -97,6 +98,7 @@ $(document).ready(function() {
   })
 
   $('.left').click(function() {
+    console.log("left arrow clicked")
     stopSlideShow()
     lastSlide(10)
     startSlideShow()
