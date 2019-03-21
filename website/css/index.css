@@ -726,6 +726,7 @@ cursor: pointer;
     text-align: center;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -735,7 +736,7 @@ cursor: pointer;
 }
 
 .board-list div {
-    height: 1.2em;
+    min-height: 1.2em;
     margin-bottom: 5px;
     min-width: 51%;
 }
