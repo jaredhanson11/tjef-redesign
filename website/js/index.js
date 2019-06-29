@@ -120,12 +120,18 @@ function navBarSetup() {
 $(document).ready(function() {
   /*//////// Event listeners ////////*/
 
-/*
   //// Stick navbar to top ////
+/*
+ * The commented out features below are due to the fact that navigation bar
+ * are currently disabled.
+
+
   var navBar = $('.nav-bar').first();
+*/
   $(window).scroll(function() {
     const windowHeight = $(window).height();
     const currentScroll = $(window).scrollTop();
+/*
     var fixedTop = navBar.hasClass('fixed-top');
     if ((currentScroll > 0) && (!fixedTop)) {
         navBar.addClass('fixed-top');
@@ -133,10 +139,12 @@ $(document).ready(function() {
         navBar.removeClass('fixed-top');
         sideNavToggle(true);
     }
+*/
     parallaxScroll(currentScroll);
   });
   //// End stick navbar to top ////
 
+/*
   navBarSetup();
 */
 
