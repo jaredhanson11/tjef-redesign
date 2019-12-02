@@ -7,7 +7,7 @@ function parallaxScroll(currentScroll) {
 
 ////Spotlight section////
 
-/*function changeSlide(n, fadeSpeed) {
+function changeSlide(n, fadeSpeed) {
   console.log("changeSlide called")
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
     var dots = $('.dot')
@@ -18,10 +18,10 @@ function parallaxScroll(currentScroll) {
 
     var varName = 'slide' + n
     $('#spotlightImg').attr('src', window[varName].imageSrc)
-    $('#spotlight-description').html(window[varName].desc)
+    $('.spotlight-description').html(window[varName].desc)
 
   }).fadeIn(fadeSpeed)
-  //fixSize($('#spotlightImg'))
+  fixSize($('.spotlight-picture'))
 }
 
 function nextSlide(fadeSpeed) {
@@ -55,16 +55,21 @@ function createDots() {
 }
 
 function fixSize(image) {
-  console.log(image.width())
-  if (image.width() < '100%') {
-    image.width('100%')
-    console.log(image.width())
-  }
-  
-  //if (image.height < maxHeight) {
-    //var paddingAddString = Number(maxHeight - image.height) + 'px'
-    //$(image).css({'padding-top': paddingAddString})
-  //}
+  image.children("img").each(function(){
+      imgRatio = $(this).height()/$(this).width();
+      containerRatio = $(this).parent().height()/$(this).parent().width();
+      if (imgRatio > containerRatio) {
+          $(this).css({
+              height: '100%',
+              width: 'auto'
+          });
+      } else {
+          $(this).css({
+              height: 'auto',
+              width: '100%'
+          });
+      }
+  });
 }
 
 var intervalId
@@ -103,7 +108,7 @@ $(document).ready(function() {
     lastSlide(10)
     startSlideShow()
   })
-})*/
+})
 ////End spotlight sections////
 
 //// Persons boxes ////

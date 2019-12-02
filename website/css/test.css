@@ -594,7 +594,7 @@ body {
 }
 /*/////////// End Who we are section /////////// */
 
-/*/////////// Splotlight section /////////// */
+/*/////////// Spotlight section /////////// */
 .section#spotlight {
     display: flex;
     flex-direction: column;
@@ -603,8 +603,6 @@ body {
     justify-content: center;
 
     padding-top: 5vh;
-    width: 80 vw;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -618,7 +616,7 @@ body {
     font-size: .8em;
 }
 
-#spotlight > .spotlight-picture > img {
+#spotlight > .spotlight-picture {
     vertical-align: center;
     height: 80vh;
     max-width: 110%;

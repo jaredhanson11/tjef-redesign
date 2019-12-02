@@ -603,27 +603,30 @@ body {
     justify-content: center;
 
     padding-top: 5vh;
-    width: 80 vw;
-    margin: 0 auto;
     text-align: center;
 }
 
-#spotlight > .spotlight-header {
+.spotlight-header {
     padding-bottom: 5px;
     font-size: 1.5em;
+    height: 8%;
 }
 
-#spotlight > #spotlight-description {
+.spotlight-picture {
+  width: 100%;
+  height: 75%;
+}
+
+#spotlightImg {
+  border-radius: 5%;
+}
+
+.spotlight-description {
     text-align: justify;
     font-size: .8em;
+  height: 17%;
 }
 
-#spotlight > .spotlight-picture > img {
-    vertical-align: center;
-    height: 80vh;
-    max-width: 110%;
-    border-radius: 20px;
-}
 
 .arrow {
   text-decoration: none;
