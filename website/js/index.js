@@ -7,13 +7,16 @@ function parallaxScroll(currentScroll) {
 
 ////Spotlight section////
 
+// change to arbitrary slide, used by nextSlide, lastSlide
 function changeSlide(n, fadeSpeed) {
-  console.log("changeSlide called")
+  console.log(`changeSlide called at ${Date.now()}`)
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
+
+    // changes dot colors
     var dots = $('.dot')
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(' active', '')
-    }
+    $.each(dots, function() {
+      this.className = this.className.replace('active', '')
+    })
     dots[n-1].className += ' active'
 
     var varName = 'slide' + n
@@ -24,40 +27,44 @@ function changeSlide(n, fadeSpeed) {
   fixSize($('.spotlight-picture'))
 }
 
-function nextSlide(fadeSpeed) {
+// switches to next slide, used for whole slideshow
+function nextSlide() {
     var imageSrc = $('#spotlightImg').fadeOut().attr('src')
-    var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
+    var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2) // gets current slide num
+    slideIndex = Number(slideIndex) % slideShowInfo.slideTotal // if at last slide, go back to 0
 
-    if (slideIndex == slideTotal)
-      slideIndex = 0
+    console.log(`DEBUG: next slide called, new slide index: ${slideIndex}`)
 
-    changeSlide(Number(slideIndex) + 1, fadeSpeed)
+    changeSlide(Number(slideIndex) + 1, slideShowInfo.fadeSpeed)
 }
 
-function lastSlide(fadeSpeed) {
+// switches to previous slide, used by left arrow btn
+function lastSlide() {
   console.log("lastSlide called")
   var imageSrc = $('#spotlightImg').fadeOut().attr('src')
   var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
 
   if (slideIndex == 1)
-    slideIndex = slideTotal
+    slideIndex = slideShowInfo.slideTotal
 
-  changeSlide(Number(slideIndex), fadeSpeed)
+  changeSlide(Number(slideIndex), slideShowInfo.fadeSpeed)
 }
 
 function createDots() {
   $('<span  class="arrow left">❮</span>').appendTo('#dots')
   $('<span class="dot active"></span>').appendTo('#dots')
-  for (var i = 0; i < (slideTotal-1); i++) {
+  for (var i = 0; i < (slideShowInfo.slideTotal-1); i++) {
     $('<span class="dot"></span>').appendTo('#dots')
   }
   $('<span class="arrow right">❯</span>').appendTo('#dots')
 }
 
+// resizes image
 function fixSize(image) {
+  console.log('DEBUG: fixSize called')
   image.children("img").each(function(){
-      imgRatio = $(this).height()/$(this).width();
-      containerRatio = $(this).parent().height()/$(this).parent().width();
+      imgRatio = $(this).height() / $(this).width();
+      containerRatio = $(this).parent().height() / $(this).parent().width();
       if (imgRatio > containerRatio) {
           $(this).css({
               height: '100%',
@@ -74,20 +81,22 @@ function fixSize(image) {
 
 var intervalId
 
+// starts slideshow, REQUIREMENT: slideShowInfo.speed >> slideShowInfo.fadeSpeed
 function startSlideShow() {
-
-  intervalId = setTimeout(nextSlide(750), 30000)
+  intervalId = setInterval(nextSlide, slideShowInfo.speed)
 }
 
 function stopSlideShow() {
-  clearTimeout(intervalId)
+  clearInterval(intervalId)
 }
 
-//dot event listeners
+
 $(document).ready(function() {
   createDots()
+  nextSlide()
   startSlideShow()
 
+  //dot event listeners
   $('.dot').each(function(index){
     $(this).click(function() {
       stopSlideShow()
