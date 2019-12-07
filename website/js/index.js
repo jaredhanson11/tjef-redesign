@@ -9,7 +9,6 @@ function parallaxScroll(currentScroll) {
 
 // change to arbitrary slide, used by nextSlide, lastSlide
 function changeSlide(n, fadeSpeed) {
-  console.log(`changeSlide called at ${Date.now()}`)
   $('#spotlightImg').fadeOut(fadeSpeed, function() {
 
     // changes dot colors
@@ -20,11 +19,52 @@ function changeSlide(n, fadeSpeed) {
     dots[n-1].className += ' active'
 
     var varName = 'slide' + n
-    $('#spotlightImg').attr('src', window[varName].imageSrc)
-    $('.spotlight-description').html(window[varName].desc)
+    genSlide(window[varName])
+//    $('#spotlightImg').attr('src', window[varName].imageSrc)
+//    $('.spotlight-description').html(window[varName].desc)
 
   }).fadeIn(fadeSpeed)
   fixSize($('.spotlight-picture'))
+}
+
+// creates html code for the media of a slide
+function genMedia(info) {
+  let returnHtml = ''
+  console.log(info['img'+0])
+  for (let i = 0; i < info.mediaNum; ++i) {
+    if (String('img' + i) in info)
+      returnHtml += '<img class="spotlight-media" src=\"' + info['img'+i] + '\"/>'
+    else if (String('vid' + i) in info) {
+      returnHtml +=  '<iframe class="spotlight-media" src=\"' + info['img'+i] + '\"/>'
+    }
+  }
+  return returnHtml
+}
+
+
+function readFile(filename) {
+  let data
+  $.get(filename, function(a) {
+    data = a.toString();
+  }, 'text')
+  console.log(data);
+  return data
+}
+
+//generates slide
+function genSlide(info) {
+
+  // handle possible subcaptions
+  //if ('caption' in info)
+    //$('#spotlight-caption').html(readFile(info.caption))
+  //else
+    //$('#spotlight-caption').html('')
+
+  // put in desc
+  //$('#spotlight-description').html(readFile(info.desc))
+
+  //put in imgs/vids
+  $('#spotlight-picture').html(genMedia(info))
 }
 
 // switches to next slide, used for whole slideshow
@@ -33,14 +73,11 @@ function nextSlide() {
     var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2) // gets current slide num
     slideIndex = Number(slideIndex) % slideShowInfo.slideTotal // if at last slide, go back to 0
 
-    console.log(`DEBUG: next slide called, new slide index: ${slideIndex}`)
-
     changeSlide(Number(slideIndex) + 1, slideShowInfo.fadeSpeed)
 }
 
 // switches to previous slide, used by left arrow btn
 function lastSlide() {
-  console.log("lastSlide called")
   var imageSrc = $('#spotlightImg').fadeOut().attr('src')
   var slideIndex = imageSrc.substring(imageSrc.lastIndexOf('t') + 1, imageSrc.lastIndexOf('t') + 2)
 
@@ -50,6 +87,7 @@ function lastSlide() {
   changeSlide(Number(slideIndex), slideShowInfo.fadeSpeed)
 }
 
+// creates dots based on slideTotal
 function createDots() {
   $('<span  class="arrow left">❮</span>').appendTo('#dots')
   $('<span class="dot active"></span>').appendTo('#dots')
@@ -61,7 +99,6 @@ function createDots() {
 
 // resizes image
 function fixSize(image) {
-  console.log('DEBUG: fixSize called')
   image.children("img").each(function(){
       imgRatio = $(this).height() / $(this).width();
       containerRatio = $(this).parent().height() / $(this).parent().width();
@@ -79,43 +116,28 @@ function fixSize(image) {
   });
 }
 
-var intervalId
-
-// starts slideshow, REQUIREMENT: slideShowInfo.speed >> slideShowInfo.fadeSpeed
-function startSlideShow() {
-  intervalId = setInterval(nextSlide, slideShowInfo.speed)
-}
-
-function stopSlideShow() {
-  clearInterval(intervalId)
-}
-
-
 $(document).ready(function() {
   createDots()
   nextSlide()
-  startSlideShow()
 
   //dot event listeners
   $('.dot').each(function(index){
     $(this).click(function() {
-      stopSlideShow()
-      changeSlide(index + 1, 100);
-      startSlideShow();
+      changeSlide(index + 1, slideShowInfo.fadeSpeed);
     });
   });
 
+  //media event listeners
+  $('.media-container').each(function (index) {
+  })
+
   $('.right').click(function() {
-    stopSlideShow()
-    nextSlide(10)
-    startSlideShow()
+    nextSlide(slideShowInfo.fadeSpeed)
   })
 
   $('.left').click(function() {
     console.log("left arrow clicked")
-    stopSlideShow()
-    lastSlide(10)
-    startSlideShow()
+    lastSlide(slideShowInfo.fadeSpeed)
   })
 })
 ////End spotlight sections////
