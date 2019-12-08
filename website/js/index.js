@@ -32,9 +32,9 @@ function genMedia(info) {
   let returnHtml = ''
   console.log(info['img'+0])
   for (let i = 0; i < info.mediaNum; ++i) {
-    if (String('img' + i) in info)
+    if ('img' + i in info)
       returnHtml += '<img class="spotlight-media" src=\"' + info['img'+i] + '\"/>'
-    else if (String('vid' + i) in info) {
+    else if ('vid' + i in info) {
       returnHtml +=  '<iframe class="spotlight-media" src=\"' + info['img'+i] + '\"/>'
     }
   }
