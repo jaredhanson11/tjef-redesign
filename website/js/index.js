@@ -7,37 +7,19 @@ function parallaxScroll(currentScroll) {
 
 ////Spotlight section////
 
-// change to arbitrary slide, used by nextSlide, lastSlide
-function changeSlide(n, fadeSpeed) {
-  $('#spotlightImg').fadeOut(fadeSpeed, function() {
-
-    // changes dot colors
-    var dots = $('.dot')
-    $.each(dots, function() {
-      this.className = this.className.replace('active', '')
-    })
-    dots[n-1].className += ' active'
-
-    var varName = 'slide' + n
-    genSlide(window[varName])
-//    $('#spotlightImg').attr('src', window[varName].imageSrc)
-//    $('.spotlight-description').html(window[varName].desc)
-
-  }).fadeIn(fadeSpeed)
-  fixSize($('.spotlight-picture'))
-}
-
 // creates html code for the media of a slide
 function genMedia(info) {
+  console.log(info)
   let returnHtml = ''
-  console.log(info['img'+0])
-  for (let i = 0; i < info.mediaNum; ++i) {
+  for (let i = 0; i < info.mediaNum; i++) {
+    console.log('img' + i in info)
     if ('img' + i in info)
-      returnHtml += '<img class="spotlight-media" src=\"' + info['img'+i] + '\"/>'
+      returnHtml += '<div class=\"media-container\"><img class=\"media\" src=\"' + info['img'+i] + '\"/></div>'
     else if ('vid' + i in info) {
-      returnHtml +=  '<iframe class="spotlight-media" src=\"' + info['img'+i] + '\"/>'
+      returnHtml +=  '<div class=\"media-container\"><iframe class=\"media\" src=\"' + info['img'+i] + '\"/></div>'
     }
   }
+  console.log(returnHtml)
   return returnHtml
 }
 
@@ -64,8 +46,46 @@ function genSlide(info) {
   //$('#spotlight-description').html(readFile(info.desc))
 
   //put in imgs/vids
-  $('#spotlight-picture').html(genMedia(info))
+  $('#spotlight-media').html(genMedia(info))
 }
+
+// expand media to cover entire container
+function expandMedia() {
+  $(this).children().width($('#spotlight-media').width())
+  $(this).children().height($('#spotlight-media').height())
+}
+
+//shrink media
+function shrinkMedia() {
+  $(this).children().width('100%')
+  $(this).children().height('100%')
+}
+
+// change to arbitrary slide, used by nextSlide, lastSlide
+function changeSlide(n, fadeSpeed) {
+  $('#spotlight-media').fadeOut(fadeSpeed, function() {
+
+    // changes dot colors
+    var dots = $('.dot')
+    $.each(dots, function() {
+      this.className = this.className.replace('active', '')
+    })
+    dots[n].className += ' active'
+
+    var varName = 'slide' + n
+    genSlide(window[varName])
+
+    //set event listeners
+    $('.media-container').each(function () {
+      $(this).hover(expandMedia, shrinkMedia)
+    })
+//    $('#spotlightImg').attr('src', window[varName].imageSrc)
+//    $('.spotlight-description').html(window[varName].desc)
+
+  }).fadeIn(fadeSpeed)
+  fixSize($('.spotlight-media'))
+}
+
 
 // switches to next slide, used for whole slideshow
 function nextSlide() {
@@ -86,6 +106,8 @@ function lastSlide() {
 
   changeSlide(Number(slideIndex), slideShowInfo.fadeSpeed)
 }
+
+
 
 // creates dots based on slideTotal
 function createDots() {
@@ -118,18 +140,15 @@ function fixSize(image) {
 
 $(document).ready(function() {
   createDots()
-  nextSlide()
+  changeSlide(0, 10)
 
   //dot event listeners
   $('.dot').each(function(index){
     $(this).click(function() {
-      changeSlide(index + 1, slideShowInfo.fadeSpeed);
+      changeSlide(index, slideShowInfo.fadeSpeed);
     });
   });
 
-  //media event listeners
-  $('.media-container').each(function (index) {
-  })
 
   $('.right').click(function() {
     nextSlide(slideShowInfo.fadeSpeed)

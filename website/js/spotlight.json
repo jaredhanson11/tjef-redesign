@@ -2,4 +2,4 @@ var slideShowInfo = {"slideTotal":  4, "speed":  5000, "fadeSpeed":  100, "maxDe
 var slide0 = {"mediaNum": 1, "video": false, "img0": "./img/spotlight1.png", "desc": "./txt/spotlight1.txt"};
 var slide1 = {"mediaNum": 1, "video": false, "img0": "./img/spotlight2.png", "desc": "./txt/spotlight2.txt"};
 var slide2 = {"medianum": 1, "video": false, "img0": "./img/spotlight3.png", "desc": "./txt/spotlight2.txt"};
-var slide3 = {"mediaNum": 2, "video": false, "img0": "./img/spotlight1.png", "img2": "./img/spotlight2.png","desc": "./txt/spotlight2.txt"};
+var slide3 = {"mediaNum": 2, "video": false, "img0": "./img/spotlight1.png", "img1": "./img/spotlight2.png","desc": "./txt/spotlight2.txt"};
