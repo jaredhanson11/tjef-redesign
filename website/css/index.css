@@ -607,13 +607,56 @@ body {
     font-size: 1.5em;
 }
 
-#spotlight > .spotlight-description {
-    text-align: justify;
+#spotlight > .spotlight-caption {
+    text-align: left;
     font-size: .8em;
+    width: 100%;
 }
 
-#spotlight > .spotlight-picture > img {
+#spotlight > .spotlight-picture {
+  position: relative;
+}
+
+#spotlight > .spotlight-picture.description-inactive > .spotlight-overlay {
+  background: rgba(0, 0, 0, 0); /* Black see-through */
+}
+
+#spotlight > .spotlight-picture > .spotlight-overlay {
+  background: rgba(0, 0, 0, .7); /* Black see-through */
+  transition: .5s ease;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#spotlight > .spotlight-picture.description-inactive > .spotlight-description {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#spotlight > .spotlight-picture > .spotlight-description {
+  opacity: 1;
+  transition: .5s ease;
+
+  position: absolute;
+  width: 80%;
+  padding: 2%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, .8);
+  border-radius: 20px;
+}
+
+#spotlight > .spotlight-picture > img.spotlight-img {
     width: 100%;
+}
+
+#spotlight > .spotlight-picture > img.description-arrow {
+    display: none;
 }
 
 /*/////////// End Splotlight section /////////// */
