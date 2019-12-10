@@ -4,6 +4,78 @@ function parallaxScroll(currentScroll) {
   var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
   $('body').css('background-position-y', backgroundScroll);
 }
+//// Spotlight Carousel ////
+
+// TODO: fills in divs for new slide
+function genSlide() {
+}
+
+// changes to arbitrary slide
+function changeSlide(n) {
+
+  // changes dot colors
+  var dots = $('.dot')
+  $.each(dots, function() {
+    this.className = this.className.replace('active', '')
+  })
+  dots[n].className += ' active'
+
+  var varName = 'slide' + n
+  genSlide(window[varName])
+}
+
+//get current active slide based on dots active/non-active
+function getCurrIndex() {
+  let dots = $('.dot')
+  for (let i = 0; i < slideShowInfo.slideTotal; i++) {
+    if (dots[i].className.includes('active'))
+      return i
+  }
+  return -1
+}
+
+// changes to next slide
+function nextSlide() {
+  changeSlide((getCurrIndex()+1) % slideShowInfo.slideTotal)
+}
+
+// changes to last slide
+function lastSlide() {
+  let newIndex = (getCurrIndex()-1) % slideShowInfo.slideTotal
+  if (newIndex < 0)
+    newIndex = slideShowInfo.slideTotal-1
+  changeSlide(newIndex)
+}
+
+// creates dots based on slideTotal from json file
+function createDots() {
+  $('<span  class="arrow left">❮</span>').appendTo('#dots')
+  $('<span class="dot active"></span>').appendTo('#dots')
+  for (var i = 0; i < (slideShowInfo.slideTotal-1); i++) {
+    $('<span class="dot"></span>').appendTo('#dots')
+  }
+  $('<span class="arrow right">❯</span>').appendTo('#dots')
+}
+
+
+$(document).ready(function() {
+  createDots()
+
+  //dot event listeners
+  $('.dot').each(function(index){
+    $(this).click(function() {
+      changeSlide(index)
+    })
+  })
+
+  $('.right').click(nextSlide)
+
+  $('.left').click(lastSlide)
+
+  $('')
+})
+
+/// End Spotlight Carousel ////
 
 //// Persons boxes ////
 function setPersonItemHeight(personBoxes) {

@@ -659,6 +659,42 @@ body {
     display: none;
 }
 
+#dots {
+  text-align: center;
+}
+
+.dot {
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.arrow {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 2px;
+  color: #bbb;
+  padding-top: 0px;
+}
+
+.arrow:hover {
+  color: #717171;
+}
+
 /*/////////// End Splotlight section /////////// */
 
 /*//////////Contact Section///////////*/
