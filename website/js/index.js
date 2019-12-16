@@ -39,8 +39,8 @@ function nextSlide() {
   changeSlide((getCurrIndex()+1) % slideShowInfo.slideTotal)
 }
 
-// changes to last slide
-function lastSlide() {
+// changes to previous slide
+function previousSlide() {
   let newIndex = (getCurrIndex()-1) % slideShowInfo.slideTotal
   if (newIndex < 0)
     newIndex = slideShowInfo.slideTotal-1
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
   $('.right').click(nextSlide)
 
-  $('.left').click(lastSlide)
+  $('.left').click(previousSlide)
 
   $('')
 })
