@@ -5,74 +5,64 @@ function parallaxScroll(currentScroll) {
   $('body').css('background-position-y', backgroundScroll);
 }
 //// Spotlight Carousel ////
+dotIndex = 0
 
 // TODO: fills in divs for new slide
-function genSlide() {
+function genSlide(spotlight, img, dots) {
+  const spotlightHtml = Handlebars.templates['spotlight']({
+    spotlight: spotlight,
+    img: img,
+    dots: dots
+  })
+  $('.section#spotlight').html(spotlightHtml)
+  dotEventListeners()
 }
 
 // changes to arbitrary slide
-function changeSlide(n) {
-
-  // changes dot colors
-  var dots = $('.dot')
-  $.each(dots, function() {
-    this.className = this.className.replace('active', '')
-  })
-  dots[n].className += ' active'
-
-  var varName = 'slide' + n
-  genSlide(window[varName])
-}
-
-//get current active slide based on dots active/non-active
-function getCurrIndex() {
-  let dots = $('.dot')
-  for (let i = 0; i < slideShowInfo.slideTotal; i++) {
-    if (dots[i].className.includes('active'))
-      return i
+function changeSlide(n, descriptionActive) {
+  dotIndex = n % slideShow.length
+  if (dotIndex < 0) {
+    dotIndex = slideShow.length + dotIndex
   }
-  return -1
+  console.log(dotIndex)
+  dots = slideShow.map((_, i) => {
+    var ret = {num: i}
+    if (i == dotIndex) {
+      ret.active = true
+    }
+    return ret
+  })
+  _data = slideShow[dotIndex]
+  img = _data.imgs[0]
+  spotlight = {description: _data.desc, class: 'description-inactive'}
+  if (descriptionActive) {
+    spotlight.class = 'description-active'
+  }
+  genSlide(spotlight, img, dots)
 }
 
 // changes to next slide
 function nextSlide() {
-  changeSlide((getCurrIndex()+1) % slideShowInfo.slideTotal)
+  changeSlide(dotIndex += 1 % slideShow.length, false)
 }
 
 // changes to previous slide
 function previousSlide() {
-  let newIndex = (getCurrIndex()-1) % slideShowInfo.slideTotal
-  if (newIndex < 0)
-    newIndex = slideShowInfo.slideTotal-1
-  changeSlide(newIndex)
+  changeSlide(dotIndex -= 1 % slideShow.length, false)
 }
 
-// creates dots based on slideTotal from json file
-function createDots() {
-  $('<span  class="arrow left">❮</span>').appendTo('#dots')
-  $('<span class="dot active"></span>').appendTo('#dots')
-  for (var i = 0; i < (slideShowInfo.slideTotal-1); i++) {
-    $('<span class="dot"></span>').appendTo('#dots')
-  }
-  $('<span class="arrow right">❯</span>').appendTo('#dots')
+function dotEventListeners() {
+  //dot event listeners
+  $('.dot').click(function(e) {
+    changeSlide($(event.target).data('i'), false)
+  })
+  $('.right').click(nextSlide)
+  $('.left').click(previousSlide)
 }
-
 
 $(document).ready(function() {
-  createDots()
-
-  //dot event listeners
-  $('.dot').each(function(index){
-    $(this).click(function() {
-      changeSlide(index)
-    })
-  })
-
-  $('.right').click(nextSlide)
-
-  $('.left').click(previousSlide)
-
-  $('')
+  Handlebars.partials = Handlebars.templates;
+  changeSlide(dotIndex, false)
 })
 
 /// End Spotlight Carousel ////

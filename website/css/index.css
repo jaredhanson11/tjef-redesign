@@ -679,20 +679,26 @@ body {
 }
 
 .arrow {
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
   height: 16px;
   width: 16px;
-  border-radius: 50%;
+  border: solid #bbb;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
   cursor: pointer;
-  margin: 0 2px;
-  color: #bbb;
-  padding-top: 0px;
+}
+
+.arrow.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.arrow.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .arrow:hover {
-  color: #717171;
+  border-color: black;
 }
 
 /*/////////// End Splotlight section /////////// */
