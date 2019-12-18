@@ -5,7 +5,8 @@ function parallaxScroll(currentScroll) {
   $('body').css('background-position-y', backgroundScroll);
 }
 //// Spotlight Carousel ////
-dotIndex = 0
+state_SpotlightIndex = 0
+state_DescriptionActive = false
 
 // TODO: fills in divs for new slide
 function genSlide(spotlight, img, dots) {
@@ -15,24 +16,24 @@ function genSlide(spotlight, img, dots) {
     dots: dots
   })
   $('.section#spotlight').html(spotlightHtml)
-  dotEventListeners()
+  spotlightEventListeners()
 }
 
 // changes to arbitrary slide
 function changeSlide(n, descriptionActive) {
-  dotIndex = n % slideShow.length
-  if (dotIndex < 0) {
-    dotIndex = slideShow.length + dotIndex
+  state_SpotlightIndex = n % slideShow.length
+  state_DescriptionActive = descriptionActive
+  if (state_SpotlightIndex < 0) {
+    state_SpotlightIndex = slideShow.length + state_SpotlightIndex
   }
-  console.log(dotIndex)
   dots = slideShow.map((_, i) => {
     var ret = {num: i}
-    if (i == dotIndex) {
+    if (i == state_SpotlightIndex) {
       ret.active = true
     }
     return ret
   })
-  _data = slideShow[dotIndex]
+  _data = slideShow[state_SpotlightIndex]
   img = _data.imgs[0]
   spotlight = {description: _data.desc, class: 'description-inactive'}
   if (descriptionActive) {
@@ -43,26 +44,29 @@ function changeSlide(n, descriptionActive) {
 
 // changes to next slide
 function nextSlide() {
-  changeSlide(dotIndex += 1 % slideShow.length, false)
+  changeSlide(state_SpotlightIndex += 1 % slideShow.length, false)
 }
 
 // changes to previous slide
 function previousSlide() {
-  changeSlide(dotIndex -= 1 % slideShow.length, false)
+  changeSlide(state_SpotlightIndex -= 1 % slideShow.length, false)
 }
 
-function dotEventListeners() {
+function spotlightEventListeners() {
   //dot event listeners
   $('.dot').click(function(e) {
     changeSlide($(event.target).data('i'), false)
   })
   $('.right').click(nextSlide)
   $('.left').click(previousSlide)
+  $('.spotlight-overlay').click(() => {
+    changeSlide(state_SpotlightIndex, !state_DescriptionActive)
+  })
 }
 
 $(document).ready(function() {
   Handlebars.partials = Handlebars.templates;
-  changeSlide(dotIndex, false)
+  changeSlide(state_SpotlightIndex, false)
 })
 
 /// End Spotlight Carousel ////
