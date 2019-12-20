@@ -58,14 +58,16 @@ function previousSlide() {
 
 // next picture for slide w/ multiple pictures
 function nextPicture() {
-  index = ++state_ImageIndex % slideShow[state_SpotlightIndex].imgs.length
-  changePicture(index)
+  state_ImageIndex = (state_ImageIndex + 1) % slideShow[state_SpotlightIndex].imgs.length
+  changePicture(state_ImageIndex)
 }
 
 // previous picture for slide w/ multiple pictures
 function previousPicture() {
-  index = ++state_ImageIndex % slideShow[state_SpotlightIndex].imgs.length
-  changePicture(index)
+  --state_ImageIndex
+  if (state_ImageIndex < 0)
+    state_ImageIndex = slideShow[state_SpotlightIndex].imgs.length - 1
+  changePicture(state_ImageIndex)
 }
 
 // change picture/caption
