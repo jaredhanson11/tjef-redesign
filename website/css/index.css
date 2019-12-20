@@ -655,6 +655,10 @@ body {
     width: 100%;
 }
 
+#spotlight > .spotlight-picture:hover {
+  cursor: pointer;
+}
+
 #spotlight > .spotlight-picture > img.description-arrow {
     display: none;
 }
@@ -687,6 +691,31 @@ body {
   cursor: pointer;
 }
 
+.picture-arrow {
+    z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.right-picture {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.right-picture:hover, .left-picture:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .arrow.right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -699,6 +728,19 @@ body {
 
 .arrow:hover {
   border-color: black;
+}
+
+.description-btn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 10%;
+  border-radius: 10%;
+  border: 1px solid #2E392A;
+  background: #2E392A;
+  font-size: .9em;
+  color: white;
+  box-shadow: 1px 1px 10px black;
 }
 
 /*/////////// End Splotlight section /////////// */

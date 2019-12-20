@@ -7,10 +7,11 @@ function parallaxScroll(currentScroll) {
 //// Spotlight Carousel ////
 state_SpotlightIndex = 0
 state_DescriptionActive = false
+state_ImageIndex = 0
 
 // TODO: fills in divs for new slide
-function genSlide(spotlight, img, dots) {
-  const spotlightHtml = Handlebars.templates['spotlight']({
+function genSlide(spotlight, img, dots, mult) {
+  const spotlightHtml = Handlebars.templates[mult ? 'spotlight-mult' : 'spotlight']({
     spotlight: spotlight,
     img: img,
     dots: dots
@@ -21,6 +22,7 @@ function genSlide(spotlight, img, dots) {
 
 // changes to arbitrary slide
 function changeSlide(n, descriptionActive) {
+  state_ImageIndex = 0
   state_SpotlightIndex = n % slideShow.length
   state_DescriptionActive = descriptionActive
   if (state_SpotlightIndex < 0) {
@@ -39,7 +41,8 @@ function changeSlide(n, descriptionActive) {
   if (descriptionActive) {
     spotlight.class = 'description-active'
   }
-  genSlide(spotlight, img, dots)
+
+  genSlide(spotlight, img, dots, _data.imgs.length > 1)
 }
 
 // changes to next slide
@@ -52,6 +55,28 @@ function previousSlide() {
   changeSlide(state_SpotlightIndex -= 1 % slideShow.length, false)
 }
 
+
+// next picture for slide w/ multiple pictures
+function nextPicture() {
+  index = ++state_ImageIndex % slideShow[state_SpotlightIndex].imgs.length
+  changePicture(index)
+}
+
+// previous picture for slide w/ multiple pictures
+function previousPicture() {
+  index = ++state_ImageIndex % slideShow[state_SpotlightIndex].imgs.length
+  changePicture(index)
+}
+
+// change picture/caption
+function changePicture(index) {
+  data = slideShow[state_SpotlightIndex].imgs[index]
+  img = data.url
+  caption = data.caption
+  $('.spotlight-img').attr('src', img)
+  $('.spotlight-caption').html(caption)
+}
+
 function spotlightEventListeners() {
   //dot event listeners
   $('.dot').click(function(e) {
@@ -59,6 +84,8 @@ function spotlightEventListeners() {
   })
   $('.right').click(nextSlide)
   $('.left').click(previousSlide)
+  $('.right-picture').click(nextPicture)
+  $('.left-picture').click(previousPicture)
   $('.spotlight-overlay').click(() => {
     changeSlide(state_SpotlightIndex, !state_DescriptionActive)
   })
