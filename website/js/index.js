@@ -87,7 +87,10 @@ function spotlightEventListeners() {
   $('.right-picture').click(nextPicture)
   $('.left-picture').click(previousPicture)
   $('.spotlight-overlay').click(() => {
+    _image_index = state_ImageIndex
     changeSlide(state_SpotlightIndex, !state_DescriptionActive)
+    state_ImageIndex = _image_index
+    changePicture(state_ImageIndex)
   })
 }
 
