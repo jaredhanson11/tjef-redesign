@@ -1,10 +1,14 @@
 <div class="spotlight-header">At TJEF, a picture shows product!  About 40-45 current John Ernest Fellows is our bandwidth...</div>
-<div class="spotlight-picture {{spotlight.class}}">
-    <button class="description-btn">Click Me!</button>
-  <img class="spotlight-img" src="{{img.url}}" />
-  <div class="spotlight-overlay">
-  </div>
+<div class="spotlight-picture {{spotlight.class}}{{#if moreImages}} more-images{{/if}}">
+  {{#if moreImages}}
+  {{!-- TODO: REMOVE, THESE ARE ONLY STILL IN BECAUSE NO OTHER WAY TO SWITCH IMAGES --}}
+  <span class="picture-arrow left-picture">&#10094;</span>
+  <span class="picture-arrow right-picture">&#10095;</span>
+  {{/if}}
+  <div class="spotlight-img"><img src="{{img.url}}" /></div>
+  <div class="spotlight-overlay"></div>
   <div class="spotlight-description">{{spotlight.description}}</div>
 </div>
+
 <div class="spotlight-caption">{{img.caption}}</div>
 {{>dots dots=dots}}

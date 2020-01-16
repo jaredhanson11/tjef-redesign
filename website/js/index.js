@@ -11,18 +11,19 @@ state_ImageIndex = 0
 
 // TODO: fills in divs for new slide
 function genSlide(spotlight, img, dots, mult) {
-  const spotlightHtml = Handlebars.templates[mult ? 'spotlight-mult' : 'spotlight']({
+  const spotlightHtml = Handlebars.templates['spotlight']({
     spotlight: spotlight,
     img: img,
-    dots: dots
+    dots: dots,
+    moreImages: mult
   })
   $('.section#spotlight').html(spotlightHtml)
   spotlightEventListeners()
 }
 
 // changes to arbitrary slide
-function changeSlide(n, descriptionActive) {
-  state_ImageIndex = 0
+function changeSlide(n, descriptionActive, imgIndex=0) {
+  state_ImageIndex = imgIndex
   state_SpotlightIndex = n % slideShow.length
   state_DescriptionActive = descriptionActive
   if (state_SpotlightIndex < 0) {
@@ -36,7 +37,7 @@ function changeSlide(n, descriptionActive) {
     return ret
   })
   _data = slideShow[state_SpotlightIndex]
-  img = _data.imgs[0]
+  img = _data.imgs[state_ImageIndex]
   spotlight = {description: _data.desc, class: 'description-inactive'}
   if (descriptionActive) {
     spotlight.class = 'description-active'
@@ -59,7 +60,7 @@ function previousSlide() {
 // next picture for slide w/ multiple pictures
 function nextPicture() {
   state_ImageIndex = (state_ImageIndex + 1) % slideShow[state_SpotlightIndex].imgs.length
-  changePicture(state_ImageIndex)
+  changeSlide(state_SpotlightIndex, state_DescriptionActive, state_ImageIndex)
 }
 
 // previous picture for slide w/ multiple pictures
@@ -67,7 +68,7 @@ function previousPicture() {
   --state_ImageIndex
   if (state_ImageIndex < 0)
     state_ImageIndex = slideShow[state_SpotlightIndex].imgs.length - 1
-  changePicture(state_ImageIndex)
+  changeSlide(state_SpotlightIndex, state_DescriptionActive, state_ImageIndex)
 }
 
 // change picture/caption
@@ -88,11 +89,20 @@ function spotlightEventListeners() {
   $('.left').click(previousSlide)
   $('.right-picture').click(nextPicture)
   $('.left-picture').click(previousPicture)
-  $('.spotlight-overlay').click(() => {
-    _image_index = state_ImageIndex
-    changeSlide(state_SpotlightIndex, !state_DescriptionActive)
-    state_ImageIndex = _image_index
-    changePicture(state_ImageIndex)
+  $('.spotlight-img, .spotlight-overlay').click(() => {
+    // Moved away from calling changeSlide (aka rerender handlebars template)
+    // because css animations weren't working when completed replaced the html
+    // now this is a jquery toggle so html stays in place, but class is flipped 
+    state_DescriptionActive = !state_DescriptionActive
+    if (state_DescriptionActive) {
+      $('.spotlight-picture')
+        .removeClass('description-inactive')
+        .addClass('description-active')
+    } else {
+      $('.spotlight-picture')
+        .removeClass('description-active')
+        .addClass('description-inactive')
+    }
   })
 }
 

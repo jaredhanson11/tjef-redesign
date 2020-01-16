@@ -1,7 +1,4 @@
 class StoryImage {
-    url 
-    caption
-
     constructor(imgPath, caption) {
         this.url= imgPath
         this.caption = caption
@@ -29,7 +26,7 @@ University in mid-December, 2018.
     },
     {
         "imgs": [
-            new StoryImage("./img/spotlight.png","test 2")
+            new StoryImage('http://microbot.ch/new/wp-content/uploads/2015/11/2DLandscape18.jpg', 'test5')
         ],
         "desc":
         `
@@ -63,8 +60,9 @@ University in mid-December, 2018.
     },
     {
         "imgs": [
+            new StoryImage('./img/munguia.png', 'test5'),
             new StoryImage('./img/spotlight.png', 'test4'),
-            new StoryImage('./img/munguia.png', 'test5')
+            new StoryImage('http://microbot.ch/new/wp-content/uploads/2015/11/2DLandscape18.jpg', 'test5')
         ],
         "desc":
         `
