@@ -10,12 +10,13 @@ state_DescriptionActive = false
 state_ImageIndex = 0
 
 // TODO: fills in divs for new slide
-function genSlide(spotlight, img, dots, mult) {
+function genSlide(spotlight, img, dots, allImgs) {
   const spotlightHtml = Handlebars.templates['spotlight']({
     spotlight: spotlight,
     img: img,
     dots: dots,
-    moreImages: mult
+    moreImages: allImgs.length > 1,
+    previews: allImgs
   })
   $('.section#spotlight').html(spotlightHtml)
   spotlightEventListeners()
@@ -43,7 +44,7 @@ function changeSlide(n, descriptionActive, imgIndex=0) {
     spotlight.class = 'description-active'
   }
 
-  genSlide(spotlight, img, dots, _data.imgs.length > 1)
+  genSlide(spotlight, img, dots, _data.imgs)
 }
 
 // changes to next slide
@@ -76,8 +77,18 @@ function changePicture(index) {
   data = slideShow[state_SpotlightIndex].imgs[index]
   img = data.url
   caption = data.caption
-  $('.spotlight-img').attr('src', img)
+  $('.spotlight-img').children(":first").attr('src', img)
   $('.spotlight-caption').html(caption)
+}
+
+function openPreview() {
+  $('#preview-overlay').addClass('preview-active')
+  $('#invis-overlay').addClass('overlay-active')
+}
+
+function closePreview() {
+  $('#preview-overlay').removeClass('preview-active')
+  $('#invis-overlay').removeClass('overlay-active')
 }
 
 function spotlightEventListeners() {
@@ -87,12 +98,18 @@ function spotlightEventListeners() {
   })
   $('.right').click(nextSlide)
   $('.left').click(previousSlide)
-  $('.right-picture').click(nextPicture)
-  $('.left-picture').click(previousPicture)
+	$('.preview-btn').click(openPreview)
+  $('.mobile-overlay').click(closePreview)
+  $('.preview').each(function(i) {
+    $(this).click(() => {
+      changePicture(i)
+      closePreview()
+    })
+  })
   $('.spotlight-img, .spotlight-overlay').click(() => {
     // Moved away from calling changeSlide (aka rerender handlebars template)
     // because css animations weren't working when completed replaced the html
-    // now this is a jquery toggle so html stays in place, but class is flipped 
+    // now this is a jquery toggle so html stays in place, but class is flipped
     state_DescriptionActive = !state_DescriptionActive
     if (state_DescriptionActive) {
       $('.spotlight-picture')
