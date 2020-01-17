@@ -1,15 +1,19 @@
 class StoryImage {
-    constructor(imgPath, caption) {
+    constructor(imgPath, caption, orientation) {
         this.url= imgPath
         this.caption = caption
+        this.orientation = orientation
     }
 }
+
+const landscape = "landscape"
+const portrait = "portrait"
 
 var slideShowConfig = {"speed":  5000, "fadeSpeed":  100, "maxDesc":  500}
 var slideShow = [
     {
         "imgs": [
-            new StoryImage("./img/spotlight.png","Eric Sodomka (center right) and Okke Schrijvers (center left)")
+            new StoryImage("./img/spotlight.png","Eric Sodomka (center right) and Okke Schrijvers (center left)", landscape)
         ],
         "desc":
         `
@@ -26,10 +30,10 @@ University in mid-December, 2018.
     },
     {
         "imgs": [
-            new StoryImage('./img/bendall-heid/image0.jpg', ''),
-            new StoryImage('./img/bendall-heid/image1.jpg', ''),
-            new StoryImage('./img/bendall-heid/image2.jpg', ''),
-            new StoryImage('./img/bendall-heid/image3.jpg', '')
+            new StoryImage('./img/bendall-heid/image0.jpg', '', landscape),
+            new StoryImage('./img/bendall-heid/image1.jpg', '', landscape),
+            new StoryImage('./img/bendall-heid/image2.jpg', '', landscape),
+            new StoryImage('./img/bendall-heid/image3.jpg', '', landscape)
         ],
         "desc":
         `
@@ -43,7 +47,7 @@ the United States.  Each participant earned the title: John Ernest Fellow.
     },
     {
         "imgs": [
-            new StoryImage("./img/college-is-real.jpg","")
+            new StoryImage("./img/college-is-real.jpg","", landscape)
         ],
         "desc":
         `
@@ -64,8 +68,8 @@ thousand dollars to the school’s soccer program.
             new StoryImage('./img/wurzner/image0.jpg', 'Jeff Byron, retired California Energy Commissioner, Band of Angels; ' +
               'Professor Jeff Koseff, co-founder, Stanford Woods Institute on the Environment; ' +
               'Mayor Eckart Würzner, Heidelberg; ' +
-              'Ken Kaufman, Executive Chairman, The John Ernest Foundation; Emeritus, Stanford University'),
-            new StoryImage('./img/wurzner/image1.jpg', ''),
+              'Ken Kaufman, Executive Chairman, The John Ernest Foundation; Emeritus, Stanford University', landscape),
+            new StoryImage('./img/wurzner/image1.jpg', '', landscape),
         ],
         "desc":
         `
@@ -77,7 +81,7 @@ The Mayor is a combination of both.
     },
     {
         "imgs": [
-          new StoryImage('./img/munguia.png', 'Alvaro Munguia (second from right) and the Newton High School Azteca Dance Troup.')
+          new StoryImage('./img/munguia.png', 'Alvaro Munguia (second from right) and the Newton High School Azteca Dance Troup.', portrait)
         ],
         "desc":
         `
@@ -96,8 +100,8 @@ long time.
     },
     {
         "imgs": [
-          new StoryImage('./img/orlovsky/image0.jpg', ''),
-          new StoryImage('./img/orlovsky/image1.jpg', '')
+          new StoryImage('./img/orlovsky/image0.jpg', '', portrait),
+          new StoryImage('./img/orlovsky/image1.jpg', '', portrait)
         ],
         "desc":
         `

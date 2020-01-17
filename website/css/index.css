@@ -661,14 +661,26 @@ body {
 }
 
 #spotlight > .spotlight-picture > .spotlight-img > img {
+  /* Keep aspect ratio */
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
 
   /* Center align the image */
   position: relative;
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
+}
+
+#spotlight > .spotlight-picture > .spotlight-img > img.landscape {
+  /* Scale to fill container div */
+  width:100%;
+}
+
+#spotlight > .spotlight-picture > .spotlight-img > img.portrait {
+  /* Scale to fill container div */
+  height: 100%;
 }
 
 #spotlight > .spotlight-picture.more-images:hover {
