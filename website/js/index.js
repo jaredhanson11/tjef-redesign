@@ -74,21 +74,8 @@ function previousPicture() {
 
 // change picture/caption
 function changePicture(index) {
-  data = slideShow[state_SpotlightIndex].imgs[index]
-  img = data.url
-  caption = data.caption
-  $('.spotlight-img').children(":first").attr('src', img)
-  $('.spotlight-caption').html(caption)
-}
-
-function openPreview() {
-  $('#preview-overlay').addClass('preview-active')
-  $('#invis-overlay').addClass('overlay-active')
-}
-
-function closePreview() {
-  $('#preview-overlay').removeClass('preview-active')
-  $('#invis-overlay').removeClass('overlay-active')
+  state_ImageIndex = index
+  changeSlide(state_SpotlightIndex, state_DescriptionActive, state_ImageIndex)
 }
 
 function spotlightEventListeners() {
@@ -98,12 +85,9 @@ function spotlightEventListeners() {
   })
   $('.right').click(nextSlide)
   $('.left').click(previousSlide)
-	$('.preview-btn').click(openPreview)
-  $('.mobile-overlay').click(closePreview)
   $('.preview').each(function(i) {
     $(this).click(() => {
       changePicture(i)
-      closePreview()
     })
   })
   $('.spotlight-img, .spotlight-overlay').click(() => {
