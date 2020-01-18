@@ -5,10 +5,14 @@ function parallaxScroll(currentScroll) {
   $('body').css('background-position-y', backgroundScroll);
 }
 //// Spotlight Carousel ////
+
 state_SpotlightIndex = 0
 state_DescriptionActive = false
 state_ImageIndex = 0
+
+// Continues to shake arrow if hasn't shaken 3 times, or haven't pressed arrow at least once
 state_NumShakenArrow = 0
+state_SeeMoreImagesShownOnce = false
 
 // TODO: fills in divs for new slide
 function genSlide(spotlight, img, dots, allImgs) {
@@ -21,7 +25,7 @@ function genSlide(spotlight, img, dots, allImgs) {
     previews: allImgs
   })
   $('.section#spotlight').html(spotlightHtml)
-  if (moreImages && state_NumShakenArrow < 3) {
+  if (moreImages && (state_NumShakenArrow < 3 || !state_SeeMoreImagesShownOnce) ) {
     shakeArrow()
   }
   spotlightEventListeners()
@@ -104,6 +108,7 @@ function spotlightEventListeners() {
       $('.spotlight-picture')
         .removeClass('description-inactive')
         .addClass('description-active')
+      state_SeeMoreImagesShownOnce = true
     } else {
       $('.spotlight-picture')
         .removeClass('description-active')
