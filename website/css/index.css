@@ -654,13 +654,26 @@ body {
   }
 }
 
-#spotlight > .spotlight-picture.description-inactive > .spotlight-overlay > .exit {
-  display: none;
+#spotlight > .spotlight-picture > .spotlight-overlay > .image-select {
+  position: absolute;
+  transition: .5s;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 }
 
-#spotlight > .spotlight-picture > .spotlight-overlay > .exit {
-  color: white;
-  padding-left: 5%;
+#spotlight > .spotlight-picture > .spotlight-overlay > .image-select > img {
+  height: 25px;
+}
+
+#spotlight > .spotlight-picture.description-inactive > .spotlight-overlay > .image-select {
+  bottom: 100%;
+}
+
+#spotlight > .spotlight-picture.description-active > .spotlight-overlay > .image-select {
+  bottom: 70%;
+  transform: translateX(-50%) rotate(180deg);
+  -webkit-transform: translateX(-50%) rotate(180deg);
 }
 
 .spotlight-description {
@@ -707,12 +720,14 @@ body {
   margin: auto;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 3px 7px grey;
+  background-color: rgba(200,200,200,1);
 }
 
 .preview > img {
   height: 100%;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 
   /* Center align the image */
   position: relative;

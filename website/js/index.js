@@ -8,17 +8,22 @@ function parallaxScroll(currentScroll) {
 state_SpotlightIndex = 0
 state_DescriptionActive = false
 state_ImageIndex = 0
+state_NumShakenArrow = 0
 
 // TODO: fills in divs for new slide
 function genSlide(spotlight, img, dots, allImgs) {
+  const moreImages = allImgs.length > 1
   const spotlightHtml = Handlebars.templates['spotlight']({
     spotlight: spotlight,
     img: img,
     dots: dots,
-    moreImages: allImgs.length > 1,
+    moreImages: moreImages,
     previews: allImgs
   })
   $('.section#spotlight').html(spotlightHtml)
+  if (moreImages && state_NumShakenArrow < 3) {
+    shakeArrow()
+  }
   spotlightEventListeners()
 }
 
@@ -143,6 +148,11 @@ function exitButton() {
 function closeModal() {
   $('.modal-background').removeClass('active');
   $('.modal-contents').remove();
+}
+
+function shakeArrow() {
+  state_NumShakenArrow += 1
+  $('.spotlight-picture.description-inactive > .spotlight-overlay > .image-select > .shake-horizontal').removeClass('trigger-shake').addClass('trigger-shake')
 }
 
 //// End Persons boxes ////

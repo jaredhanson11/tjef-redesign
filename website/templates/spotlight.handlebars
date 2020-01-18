@@ -4,9 +4,8 @@
   <div class="spotlight-img"><img class="{{img.orientation}}" src="{{img.url}}" /></div>
   {{#if moreImages}}
     <div class="spotlight-overlay">
-      <div class="exit"><div class="exit-button">&#10006;</div></div>
+      <div class="image-select"><img class="shake-horizontal" src="./img/green_arrow.png" /></div>
       {{#each previews}}
-      {{!-- See index.js exitButton()  --}}
       <div class="preview"><img src="{{this.url}}"/></div>
       {{/each}}
     </div>
