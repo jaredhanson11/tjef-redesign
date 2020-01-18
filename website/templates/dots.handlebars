@@ -1,0 +1,11 @@
+<div class="dots">
+<span class="arrow left"></span>
+{{#each dots}}
+{{#if this.active}}
+<span class="dot active" data-i="{{this.num}}"></span>
+{{else}}
+<span class="dot" data-i="{{this.num}}"></span>
+{{/if}}
+{{/each}}
+<span class="arrow right"></span>
+</div>
