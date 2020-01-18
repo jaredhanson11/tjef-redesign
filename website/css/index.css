@@ -616,7 +616,8 @@ body {
 #spotlight > .spotlight-picture {
   position: relative;
   height: 80vh;
-  width: 100%;
+  max-width: 100vh;
+  width: 80vh;
 }
 
 #spotlight > .spotlight-picture > .spotlight-overlay {
@@ -632,12 +633,14 @@ body {
 }
 
 #spotlight > .spotlight-picture.description-active > .spotlight-overlay {
- width: 20%;
+  width: auto;
+  min-width: 20%
 }
 
 @media (max-width: 768px) {
   #spotlight > .spotlight-picture.description-active > .spotlight-overlay {
-    width: 50%;
+    width: auto;
+    min-width: 35%
   }
 }
 
@@ -657,7 +660,8 @@ body {
 #spotlight > .spotlight-picture > .spotlight-img {
   width: 100%;
   height: 100%;
-  background-color: var(--color-three);
+  background-color: rgba(200,200,200,.8);
+  border-radius: 10px;
 }
 
 #spotlight > .spotlight-picture > .spotlight-img > img {
@@ -699,6 +703,7 @@ body {
 .preview > img {
   height: 100%;
   max-width: 100%;
+  object-fit: contain;
 
   /* Center align the image */
   position: relative;
