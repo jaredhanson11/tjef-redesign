@@ -1,7 +1,8 @@
-class StoryImage {
-    constructor(imgPath, caption, orientation) {
+class StoryMedia {
+    constructor(imgPath, caption, orientation, isYoutube=false) {
         this.url= imgPath
         this.caption = caption
+        this.isYoutube = isYoutube
         this.orientation = orientation
     }
 }
@@ -9,11 +10,10 @@ class StoryImage {
 const landscape = "landscape"
 const portrait = "portrait"
 
-var slideShowConfig = {"speed":  5000, "fadeSpeed":  100, "maxDesc":  500}
 var slideShow = [
     {
         "imgs": [
-            new StoryImage("./img/spotlight.png","Eric Sodomka (center right) and Okke Schrijvers (center left)", landscape)
+            new StoryMedia("./img/spotlight.png","Eric Sodomka (center right) and Okke Schrijvers (center left)", landscape)
         ],
         "desc":
         `
@@ -30,10 +30,10 @@ University in mid-December, 2018.
     },
     {
         "imgs": [
-            new StoryImage('./img/bendall-heid/image0.jpg', '', landscape),
-            new StoryImage('./img/bendall-heid/image1.jpg', '', landscape),
-            new StoryImage('./img/bendall-heid/image2.jpg', '', landscape),
-            new StoryImage('./img/bendall-heid/image3.jpg', '', landscape)
+            new StoryMedia('./img/bendall-heid/image0.jpg', '', landscape),
+            new StoryMedia('./img/bendall-heid/image1.jpg', '', landscape),
+            new StoryMedia('./img/bendall-heid/image2.jpg', '', landscape),
+            new StoryMedia('./img/bendall-heid/image3.jpg', '', landscape)
         ],
         "desc":
         `
@@ -47,16 +47,17 @@ the United States.  Each participant earned the title: John Ernest Fellow.
     },
     {
         "imgs": [
-            new StoryImage("./img/college-is-real.jpg","", landscape)
+            new StoryMedia("./img/college-is-real.jpg","", landscape)
         ],
         "desc":
         `
 “College is Real is thriving. We now have more than 400 kids in the program at Richmond’s three public high schools. 
 Our college acceptance rate remains at 90-100% per year. I’m very proud of the impact we’ve made on these kids’ lives, 
 the schools and the community.”
-
+<br>
 - Brad Blake, Founder
-
+<br>
+<br>
 There is TJEF green at the inception of this incredible program.  It came about when Brad Blake coached a local high 
 school team, seeded number eight, at a soccer tournament.  Richmond High School was seeded first.  Brad’s team won.  
 He immediately began to develop this exciting concept, which became College is Real, beginning with a gift of two 
@@ -65,11 +66,11 @@ thousand dollars to the school’s soccer program.
     },
     {
         "imgs": [
-            new StoryImage('./img/wurzner/image0.jpg', 'Jeff Byron, retired California Energy Commissioner, Band of Angels; ' +
+            new StoryMedia('./img/wurzner/image0.jpg', 'Jeff Byron, retired California Energy Commissioner, Band of Angels; ' +
               'Professor Jeff Koseff, co-founder, Stanford Woods Institute on the Environment; ' +
               'Mayor Eckart Würzner, Heidelberg; ' +
               'Ken Kaufman, Executive Chairman, The John Ernest Foundation; Emeritus, Stanford University', landscape),
-            new StoryImage('./img/wurzner/image1.jpg', '', landscape),
+            new StoryMedia('./img/wurzner/image1.jpg', '', landscape),
         ],
         "desc":
         `
@@ -81,7 +82,7 @@ The Mayor is a combination of both.
     },
     {
         "imgs": [
-          new StoryImage('./img/munguia.png', 'Alvaro Munguia (second from right) and the Newton High School Azteca Dance Troup.', portrait)
+          new StoryMedia('./img/munguia.png', 'Alvaro Munguia (second from right) and the Newton High School Azteca Dance Troup.', portrait)
         ],
         "desc":
         `
@@ -100,8 +101,8 @@ long time.
     },
     {
         "imgs": [
-          new StoryImage('./img/orlovsky/image0.jpg', '', portrait),
-          new StoryImage('./img/orlovsky/image1.jpg', '', portrait)
+          new StoryMedia('./img/orlovsky/image0.jpg', '', portrait),
+          new StoryMedia('./img/orlovsky/image1.jpg', '', portrait)
         ],
         "desc":
         `
@@ -109,6 +110,33 @@ The John Ernest Foundation first came to know Simon Orlovsky when he and Lucy Ch
 youngsters, which led them to Dancing with the Stars. Simon Orlovsky was one of our first participants at the 
 International Summer Science School in Heidelberg. Simon liked TJEF’s suggestion that he might consider attending 
 Carleton College.  Now a graduate, he’s a very loyal Carly. And now, the wonderful world of startups!
+        `
+    },
+    {
+        "imgs": [
+          new StoryMedia('https://www.youtube.com/embed/ar-H-pzRZ1k', '', portrait, true),
+        ],
+        "desc":
+        `
+The Westfield Center seeks to promote dialogue among keyboard performers, scholars, and instrument makers. One aspect of this mission
+ is the Concert Scholar Program, designed to give talented young keyboard players in the early stages of their performing career an 
+ opportunity to perform on excellent instruments located throughout the country.
+<br>
+<br>
+This program, made possible through the support of The John Ernest Foundation, provides a three concert tour during the academic
+ year following receipt of the award. The award is based on the concept of "student mentoring" and experiential learning, and as such,
+ is intended to develop the student's skills as a performer, as well as his or her ability to meet and successfully interact with people
+ in a professional and social context. Concerts are sponsored by TJEF which provides travel, and by the hosting institution, which provides
+ hospitality. While there is no monetary award, the concert scholar receives a free membership to the Westfield Center.
+<br>
+<br>
+The John Ernest Foundation first connected with Kristian Bezuidenhout when he won the Westfield Concert Scholar award. TJEF salutes his success.
+ Mr. Bezuidenhout began his education in Australia and completed his studies at the Eastman School of Music. He has since become a maestro of the
+ fortepiano, harpsichord, and piano. Mr. Bezuidenhout received international acclaim at 21 after winning the celebrated first prize and audience
+ prize at the Bruges Fortepiano Competition in Belgium. In 2013 he was nominated by Gramophone Magazine for Artist of the Year. Kristian has also
+ demonstrated his musical prowess with some of the world’s leading ensembles such as the Orchestra of the Age of Enlightenment, Freiburger
+ Barockorchester, the Chicago Symphony Orchestra along with guest-directing the English Concert. Kristian now lives in London, but his recitals
+ take him across the world, from the United States to Japan.
         `
     },
 ]
