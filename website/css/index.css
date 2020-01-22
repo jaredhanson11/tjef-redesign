@@ -589,6 +589,16 @@ body {
 /*/////////// End Who we are section /////////// */
 
 /*/////////// Splotlight section /////////// */
+
+#spotlight-intro {
+  font-size: 1.2em;
+  font-weight: 200;
+  margin: auto;
+  max-width: 100%;
+  width: 80vh;
+  padding-bottom: 20px;
+}
+
 .section#spotlight {
     display: flex;
     flex-direction: column;
