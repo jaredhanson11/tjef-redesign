@@ -167,7 +167,7 @@ Non-Profits in 2018.
     },
     {
         "imgs": [
-          new StoryMedia('./img/montoya.jpg')
+          new StoryMedia('./img/montoya.jpg', '', landscape)
         ],
         "desc":
         `
@@ -182,7 +182,7 @@ will take place in Kuala Lumpur (Malaysia), followed by San Francisco in the fol
     },
     {
         "imgs": [
-          new StoryMedia('./img/broderick.png')
+          new StoryMedia('./img/broderick.png', '', portrait)
         ],
         "desc":
         `
