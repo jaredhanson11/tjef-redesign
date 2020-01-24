@@ -139,4 +139,19 @@ The John Ernest Foundation first connected with Kristian Bezuidenhout when he wo
  take him across the world, from the United States to Japan.
         `
     },
+    {
+        "imgs": [
+          new StoryMedia('./img/montoya.jpg')
+        ],
+        "desc":
+        `
+Grammy winning Vance George brought Juan Montoya to the attention of The John Ernest Foundation years ago as a hopeful 
+conductor from Medellin (Colombia). Vance was central to forming Juan’s professional growth.  This included a successful 
+doctoral program at the University of Arizona. Now Juan is honoring his mentor, building out the Vance George International Vocal Competition.  The pilot competition 
+will take place in Kuala Lumpur (Malaysia), followed by San Francisco in the following year.  More to follow.
+<br>
+<br>
+<a href="https://www.juandmontoya.com/" target="_blank">https://www.juandmontoya.com/</a>
+        `
+    }
 ]
