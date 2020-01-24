@@ -153,6 +153,27 @@ will take place in Kuala Lumpur (Malaysia), followed by San Francisco in the fol
 <br>
 <a href="https://www.juandmontoya.com/" target="_blank">https://www.juandmontoya.com/</a>
         `
+    },
+    {
+        "imgs": [
+          new StoryMedia('./img/broderick.png')
+        ],
+        "desc":
+        `
+Kelsey Broderick supports the Asia practice's work on a wide variety of issues and countries, with a particular 
+emphasis on China at Eurasia Group. Kelsey currently works at Eurasia Group, where she is an analyst in the Asia team 
+with a particular focus on Chinese foreign policy and Taiwan. You might see Kelsey discussing Chinese politics on Bloomberg News.
+<br>
+<br>
+Prior to Eurasia Group, she researched macroeconomic trends in China at the World Bank and held internships at the 
+Department of State, Albright Stonebridge Group, and Project 2049 Institute. She received a master's degree with 
+distinction from the Georgetown University Walsh School of Foreign Service and a bachelor's degree in anthropology 
+and Chinese language from Stanford University. 
+<br>
+<br>
+Kelsey became a John Ernest Fellow after her junior year in high school.  Jessie Chen hosted her for a summer in 
+Shanghai, where she began to hear the language she had been studying in high school.  What a story!
+        `
     }
 ]
 
