@@ -141,6 +141,32 @@ The John Ernest Foundation first connected with Kristian Bezuidenhout when he wo
     },
     {
         "imgs": [
+          new StoryMedia('https://www.youtube.com/embed/m7UGRjv0qDk', '', portrait, true)
+        ],
+        "desc":
+        `
+After months of preparation, on October 2nd a dinner program, “The Time for Civil Discourse is NOW,” featuring a keynote 
+address by the general secretary of Rotary International: John Hewko was hosted for almost 250 people at the Stanford 
+Faculty Club. The event was the brainchild of the Palo Alto University Rotary Emeriti Group, a group of distinguished 
+former Palo Alto University Rotarians, who are using their intellectual capital and position in the community to improve 
+civil discourse.
+<br>
+<br>
+Club member Okke Schrijvers gave an introduction to this timely topic drawing on stories about Alexander Hamilton and 
+Thomas Jefferson. During John's presentation, he drew on the example of Rotary's efforts to eradicate polio to highlight 
+the importance of civil discourse, and the powerful role Rotary can play in improving civil discourse. Over the years of 
+attempting to eradicate polio, there were many falsehoods spread about the vaccination efforts. Rotary was able to overcome 
+the obstacles and resistance by listening and understanding people’s concerns. John then linked the topic of civil discourse 
+to the last US presidential election and the role that media, old and new, have played in polarizing the citizenry. John 
+concluded with recommendations for how the lessons learned during polio eradication could be applied more broadly.
+<br>
+<br>
+Funding for the evening was generously provided by The John Ernest Foundation. This lecture won the Cicero Award for 
+Non-Profits in 2018.
+        `
+    },
+    {
+        "imgs": [
           new StoryMedia('./img/montoya.jpg')
         ],
         "desc":
