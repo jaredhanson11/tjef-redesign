@@ -186,9 +186,8 @@ will take place in Kuala Lumpur (Malaysia), followed by San Francisco in the fol
         ],
         "desc":
         `
-Kelsey Broderick supports the Asia practice's work on a wide variety of issues and countries, with a particular 
-emphasis on China at Eurasia Group. Kelsey currently works at Eurasia Group, where she is an analyst in the Asia team 
-with a particular focus on Chinese foreign policy and Taiwan. You might see Kelsey discussing Chinese politics on Bloomberg News.
+Kelsey Broderick currently works at the Eurasia Group, where she is an analyst in the Asia team with a particular focus 
+on Chinese foreign policy and Taiwan. You might see Kelsey discussing Chinese politics on Bloomberg News (search her).
 <br>
 <br>
 Prior to Eurasia Group, she researched macroeconomic trends in China at the World Bank and held internships at the 
