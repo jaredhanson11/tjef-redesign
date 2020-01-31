@@ -875,6 +875,11 @@ body {
     font-size: 1.2em;
 }
 
+#seneca-quote > #signature > #date {
+  font-size: .7em;
+  font-weight: 100;
+}
+
 @media (max-width : 768px) {
   #seneca-quote {
     max-width: 70%;
