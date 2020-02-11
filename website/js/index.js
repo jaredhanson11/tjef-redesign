@@ -7,7 +7,6 @@ function parallaxScroll(currentScroll) {
 
 //// Landing Screen ////
 
-// shake arrow 3 times at most or until screen has been scrolled down
 function smoothScroll(e) {
   e.preventDefault()
 
