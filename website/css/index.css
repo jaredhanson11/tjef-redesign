@@ -82,6 +82,13 @@ body {
     left: 45%;
   }
 }
+
+@media (min-width: 1500px) {
+  .landing-screen > .landing-arrow {
+    width: 3%;
+    left: 48.5%;
+  }
+}
 /* Landing Screen */
 
 /*///////////// Nav bar related css /////////////*/
