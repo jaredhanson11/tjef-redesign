@@ -4,6 +4,32 @@ function parallaxScroll(currentScroll) {
   var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
   $('body').css('background-position-y', backgroundScroll);
 }
+
+//// Landing Screen ////
+
+// shake arrow 3 times at most or until screen has been scrolled down
+function smoothScroll(e) {
+  e.preventDefault()
+
+  $('html, body').animate(
+    { scrollTop: $($(this).attr('href')).offset().top },
+    300,
+    'swing'
+  )
+
+  state_landingArrowShaken = 3
+}
+
+function shakeLandingArrow() {
+  $('.landing-arrow > .shake-horizontal').removeClass('trigger-shake').addClass('trigger-shake')
+}
+
+$(document).ready(function() {
+  $('.landing-arrow').click(smoothScroll)
+	setTimeout(shakeLandingArrow, 500)
+})
+//// End Landing Screen ////
+
 //// Spotlight Carousel ////
 
 state_SpotlightIndex = 0
@@ -14,7 +40,6 @@ state_ImageIndex = 0
 state_NumShakenArrow = 0
 state_SeeMoreImagesShownOnce = false
 
-// TODO: fills in divs for new slide
 function genSlide(spotlight, img, dots, allImgs) {
   const moreImages = allImgs.length > 1
   const spotlightHtml = Handlebars.templates['spotlight']({
