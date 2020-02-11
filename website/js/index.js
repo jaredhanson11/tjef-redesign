@@ -6,27 +6,31 @@ function parallaxScroll(currentScroll) {
 }
 
 //// Landing Screen ////
-
-function smoothScroll(e) {
-  e.preventDefault()
-
-  $('html, body').animate(
-    { scrollTop: $($(this).attr('href')).offset().top },
-    300,
-    'swing'
-  )
-
-  state_landingArrowShaken = 3
-}
-
-function shakeLandingArrow() {
-  $('.landing-arrow > .shake-horizontal').removeClass('trigger-shake').addClass('trigger-shake')
-}
-
-$(document).ready(function() {
-  $('.landing-arrow').click(smoothScroll)
-	setTimeout(shakeLandingArrow, 500)
-})
+//
+// function smoothScroll(e) {
+//   e.preventDefault()
+//
+//   $('html, body').animate(
+//     { scrollTop: $($(this).attr('href')).offset().top },
+//     300,
+//     'swing'
+//   )
+//
+//   state_landingArrowShaken = 3
+// }
+//
+// function shakeLandingArrow() {
+//   $('.landing-arrow > .shake-horizontal').removeClass('trigger-shake').addClass('trigger-shake')
+// }
+//
+// function fadeLandingArrow() {
+//
+// }
+//
+// $(document).ready(function() {
+//   $('.landing-arrow').click(smoothScroll)
+// 	setTimeout(shakeLandingArrow, 500)
+// })
 //// End Landing Screen ////
 
 //// Spotlight Carousel ////
