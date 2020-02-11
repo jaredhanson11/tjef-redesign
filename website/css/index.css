@@ -649,7 +649,6 @@ body {
     margin: auto;
     max-width: 100%;
     width: 80vh;
-    padding-bottom: 2%;
 }
 
 #spotlight > .spotlight-picture {
@@ -715,6 +714,7 @@ body {
 }
 
 .spotlight-description {
+  padding-top: 5px;
  width: 100%;
 }
 
