@@ -5,34 +5,6 @@ function parallaxScroll(currentScroll) {
   $('body').css('background-position-y', backgroundScroll);
 }
 
-//// Landing Screen ////
-//
-// function smoothScroll(e) {
-//   e.preventDefault()
-//
-//   $('html, body').animate(
-//     { scrollTop: $($(this).attr('href')).offset().top },
-//     300,
-//     'swing'
-//   )
-//
-//   state_landingArrowShaken = 3
-// }
-//
-// function shakeLandingArrow() {
-//   $('.landing-arrow > .shake-horizontal').removeClass('trigger-shake').addClass('trigger-shake')
-// }
-//
-// function fadeLandingArrow() {
-//
-// }
-//
-// $(document).ready(function() {
-//   $('.landing-arrow').click(smoothScroll)
-// 	setTimeout(shakeLandingArrow, 500)
-// })
-//// End Landing Screen ////
-
 //// Spotlight Carousel ////
 
 state_SpotlightIndex = 0

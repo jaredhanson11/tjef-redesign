@@ -63,32 +63,6 @@ body {
   font-size: 250%;
 }
 
-.landing-screen > .landing-arrow {
-  width: 4%;
-  position: absolute;
-  bottom: 1%;
-  left: 48%;
-  cursor: pointer;
-}
-
-.landing-screen > .landing-arrow > img {
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 678px) {
-  .landing-screen > .landing-arrow {
-    width: 10%;
-    left: 45%;
-  }
-}
-
-@media (min-width: 1500px) {
-  .landing-screen > .landing-arrow {
-    width: 3%;
-    left: 48.5%;
-  }
-}
 /* Landing Screen */
 
 /*///////////// Nav bar related css /////////////*/
