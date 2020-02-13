@@ -4,6 +4,7 @@ function parallaxScroll(currentScroll) {
   var backgroundScroll = (currentScroll * scrollSpeed).toString() + 'px';
   $('body').css('background-position-y', backgroundScroll);
 }
+
 //// Spotlight Carousel ////
 
 state_SpotlightIndex = 0
@@ -14,7 +15,6 @@ state_ImageIndex = 0
 state_NumShakenArrow = 0
 state_SeeMoreImagesShownOnce = false
 
-// TODO: fills in divs for new slide
 function genSlide(spotlight, img, dots, allImgs) {
   const moreImages = allImgs.length > 1
   const spotlightHtml = Handlebars.templates['spotlight']({
