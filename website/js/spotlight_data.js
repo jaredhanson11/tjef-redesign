@@ -199,6 +199,20 @@ and Chinese language from Stanford University.
 Kelsey became a John Ernest Fellow after her junior year in high school.  Jessie Chen hosted her for a summer in 
 Shanghai, where she began to hear the language she had been studying in high school.  What a story!
         `
+    },
+    {
+        "imgs": [
+          new StoryMedia('./img/peter-king.jpg', '', portrait)
+        ],
+        "desc":
+        `
+Peter King (Tulsa, Oklahoma) is a junior at Bethel College (Kansas).  His dream: to become a professional trainer.  
+The John Ernest Foundation introduced Peter to a professional mentor, David Spitdowski in Atlanta. Naturally, COVID-19 
+is impacting his studies.  But not his dream. TJEF has funded a grant so that Peter can become 
+certified to begin his professional career.
+<br>
+<a href="https://www.spitzfitness.com" target="_blank">www.spitzfitness.com</a>
+        `
     }
 ]
 
