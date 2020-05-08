@@ -11,6 +11,27 @@ const landscape = "landscape"
 const portrait = "portrait"
 
 var slideShow = [
+	    {
+        "imgs": [
+          new StoryMedia('./img/essay-competition.jpg', 'Members of The John Ernest College of Mentors. ' +
+            'Left to right: Jessie Chen (Shanghai), Chris Treble and Vance George (San Francisco), Adam Robb (Kansas), ' +
+            'Joyce and Ken Kaufman (Stanford)', landscape)
+        ],
+        "desc":
+        `
+Words matter!  Words can build bridges and create boundaries.  In a personal essay, not an academic one, applicants to 
+this international writing competition are asked to explore their relationship to words and worlds.  When did words or 
+language form a meaningful connect for you, one which was perhaps expected?  Was there a time when words or language 
+created an insurmountable separation or obstacle for you?  Is there a word which you cannot translate culturally from 
+one language to another?  Did confusion with words ever spark an interesting or unexpected outcome?
+<br>
+<br>
+The lingua franca for this competition is English.  Applicants are worldwide:
+<br>
+<br>
+<a href="https://www.writingbeyondborders.com" target="_blank">https://www.writingbeyondborders.com</a>
+        `
+    },
     {
         "imgs": [
             new StoryMedia("./img/spotlight.png","Eric Sodomka (center right) and Okke Schrijvers (center left)", landscape)
