@@ -784,7 +784,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 870px) {
   .dot {
     width: 20px;
     height: 20px;
@@ -794,6 +794,18 @@ body {
   .arrow {
     width: 15px;
     height: 15px;
+  }
+}
+
+@media (max-width: 453px) {
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .arrow {
+    width: 5px;
+    height: 5px;
   }
 }
 
