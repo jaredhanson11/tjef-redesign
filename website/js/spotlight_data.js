@@ -51,24 +51,56 @@ University in mid-December, 2018.
     },
     {
         "imgs": [
-            new StoryMedia("./img/meals/meals-1.jpg", "", portrait),
-            new StoryMedia("./img/meals/meals-2.png", "", portrait)
+        	new StoryMedia('img/bendall-south.jpg', 'John Woordward (left, New York), and Jack Bendell (right, Kansas). Both are rising juniors at the University of Pennsylvania.', landscape)
         ],
         "desc":
           `
-TJEF and MEALS
+In early June, Jack and I travelled through the American south in a pickup truck full of camping supplies and backpacks. 
+The backpacks held various toys and school supplies, and we planned on handing them out to families we met in each of 
+the small towns we stopped in. Along our trip, we made sure to exercise caution demanded of citizens during a pandemic. 
 <br>
 <br>
-The John Ernest Foundation is working with several restaurants to fund meals for first responders and those providers on 
-the front lines during this pandemic. Initiated by Esposto’s Meals in the San Francisco Bay Area, the model is being 
-duplicated elsewhere.
+With the help of Kenneth Kaufman at the John Ernest Foundation, we’d come up with the idea to hand out backpacks to 
+families in each of the towns through the local Rotary Clubs. Before we set out on the road, Ken reached out to the 
+Rotary Club in our first destination, Anniston, Alabama. We set up a call with Mr. Tommie Goggans of Anniston Rotary on 
+the first day of our trip. At that point, apart from handing out backpacks, we didn’t know what exactly our trip would 
+look like — service, research, curiosity. In our first phone conversation with Mr. Goggans, he advised us to conduct 
+interviews with the families we handed out backpacks to. Ultimately, we decided our trip was about understanding and 
+aiding Americans living in the rural south who have been particularly negatively impacted by the Coronavirus pandemic.
 <br>
 <br>
-Should you wish to help, please notate MEALS on your donation. 
+In Anniston, Mr. Goggans connected us with two families and invited us to a church service with him and his family at 
+his wife’s dance studio. His generosity and enthusiasm about helping us realize our vision reinforced our belief in 
+southern hospitality and the merits of the Rotary network. We reached out to two other Rotary Clubs on our trip, one in 
+Mariana, Florida and the other in Baton Rouge, Louisiana. In Mariana, we successfully connected with small business 
+owners with the help of local Rotarian, Allen Harkens. In Baton Rouge, we sadly didn’t have the same success due to 
+timing. At the end of our trip, we had handed out 12 of the 20 backpacks we’d prepared and interviewed six families and 
+small-business owners.
 <br>
 <br>
-<a href="https://espostosmeals.com" target="_blank">espostosmeals.com</a>
-        `
+Our experience with Rotary enriched our trip even more than we initially expected. Our conversations shed light on a 
+whole population of Americans whose stories often go unheard or unnoticed. We heard hopeful accounts of small towns 
+rallying together to help people who’d lost their jobs. Parents told us of how their families had reconnected as they 
+worked from home and their kids studied at the dining room table. Our trip’s success has made us realize that other 
+people should be able to hear the stories we heard with the help of Rotary too.
+<br>
+<br>
+Various Religious groups and NGOs have programs designed for people to be able to travel to new places and do service. 
+We think that Rotary could offer a program that utilizes its unique network of community leaders in a wide variety of 
+professions. With this diverse network in place, young people would be able to experience local communities through the 
+perspectives of community planners, teachers, business owners, religious leaders, etc. the list goes on. This way 
+someone may be able to tailor the contacts he or she makes in each of the communities to his or her interests. A Rotary 
+network of this sort would allow young adults to serve communities in a variety of different ways. On our trip, we 
+consulted with Dr. Brent Cebul, a history professor at Penn, about how to properly conduct oral history. He made sure 
+to emphasize how no matter how many interviews we conducted we’d never get a truly complete picture of the towns we 
+visited. We’d always be outsiders. Nonetheless, we firmly believe that the best way to get even an incomplete picture 
+of a town is through service and dialogue. Rotary is a great way to make both possible for young adults who follow in 
+Jack and my footsteps.
+<br>
+<br>
+We would like to thank Rotary and Ken for making such an enlightening trip possible and hope we can continue to discuss 
+ways to help other young adults have a similarly rich road-trip experience. 
+          `
     },
     {
         "imgs": [
@@ -220,6 +252,9 @@ will take place in Kuala Lumpur (Malaysia), followed by San Francisco in the fol
 <br>
 <br>
 <a href="https://www.juandmontoya.com/" target="_blank">https://www.juandmontoya.com/</a>
+<br>
+<br>
+**EVENT POSTPONED UNTIL FURTHER NOTICE**
         `
     },
     {
