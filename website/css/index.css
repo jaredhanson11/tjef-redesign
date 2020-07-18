@@ -364,7 +364,7 @@ body {
   /* Flex */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   align-content: center;
   /* End Flex */
@@ -387,6 +387,7 @@ body {
 
   height: 30vh;
   width: 100%;
+  max-width: 40%;
 }
 
 .main-goals > .goal-item > .goal-button {
@@ -420,6 +421,7 @@ body {
 
   .main-goals > .goal-item {
     height: 30vh;
+    max-width: 100%;
   }
 
   .main-goals > .goal-item > .goal-button {
