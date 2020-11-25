@@ -1,6 +1,7 @@
 import React from "react"
 import {Route, Switch} from "react-router-dom"
 import AboutPage from "./pages/AboutPage"
+import ArchivedCousinsPage from "./pages/ArchivedCousinsPage"
 import BoardPage from "./pages/BoardPage"
 import HomePage from "./pages/HomePage"
 import StoriesPage from "./pages/StoriesPage"
@@ -22,6 +23,11 @@ export class AppRoutes {
       name: "AboutPage",
       component: <AboutPage />,
       path: "/about",
+    },
+    {
+      name: "ArchivedCousinsPage",
+      component: <ArchivedCousinsPage />,
+      path: "/stories/cousins/:edition",
     },
     {
       name: "StoriesPage",

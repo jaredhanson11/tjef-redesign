@@ -7,6 +7,7 @@ const vars = {
     grey: "#B3B3B3",
     lightGrey: "#F3F3F3",
     white: "#FFFFFF",
+    offWhite: "#FDFDF0",
     black: "#000000",
     linkBlue: "#0000EE",
     red: "red",
@@ -20,6 +21,7 @@ export default class defaultStyles {
   static colors = {
     // Defaults
     white: vars.colors.white,
+    offWhite: vars.colors.offWhite,
     black: vars.colors.black,
     grey: vars.colors.grey,
     lightGrey: vars.colors.lightGrey,

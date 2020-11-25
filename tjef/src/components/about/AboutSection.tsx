@@ -2,7 +2,7 @@
 import {css, jsx} from "@emotion/core"
 import defaultStyles from "../../styles"
 
-type AboutSectionProps = {
+export type AboutSectionProps = {
   title: string
   body: string
   icon: string

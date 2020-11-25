@@ -2,7 +2,7 @@
 import {css, jsx} from "@emotion/core"
 import defaultStyles from "../../styles"
 
-type BoardMemberSectionProps = {
+export type BoardMemberSectionProps = {
   name: string
   jobTitle: string
   whyTjef: string

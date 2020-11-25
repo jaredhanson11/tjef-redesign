@@ -6,7 +6,7 @@ import AppLogo from "./AppLogo"
 export type NavTabs = "home" | "about" | "stories" | "board"
 
 type PageNavProps = {
-  activeTab: NavTabs
+  activeTab?: NavTabs
 }
 
 export default function PageNav(props: PageNavProps) {

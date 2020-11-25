@@ -5,15 +5,13 @@ import AboutPageBody from "../components/about/AboutPageBody"
 import AppPageHeader from "../components/common/AppPageHeader"
 import PageBody from "../components/common/PageBody"
 import PageNav from "../components/common/PageNav"
+import {header, subheader} from "../data/about"
 
 function AboutPage() {
   return (
-    <PageBody>
+    <PageBody background="offwhite">
       <PageNav activeTab={"about"} />
-      <AppPageHeader
-        header={"About Us"}
-        subheader={"and how we add value to our Fellows"}
-      />
+      <AppPageHeader header={header} subheader={subheader} />
       <AboutPageBody />
     </PageBody>
   )

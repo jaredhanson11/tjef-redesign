@@ -5,15 +5,13 @@ import BoardPageBody from "../components/board/BoardPageBody"
 import AppPageHeader from "../components/common/AppPageHeader"
 import PageBody from "../components/common/PageBody"
 import PageNav from "../components/common/PageNav"
+import {header, subheader} from "../data/board"
 
 function BoardPage() {
   return (
-    <PageBody>
+    <PageBody background="offwhite">
       <PageNav activeTab={"board"} />
-      <AppPageHeader
-        header={"Board of Governors"}
-        subheader={"of The John Ernest Foundation"}
-      />
+      <AppPageHeader header={header} subheader={subheader} />
       <BoardPageBody />
     </PageBody>
   )
