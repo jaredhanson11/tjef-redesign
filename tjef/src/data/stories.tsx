@@ -1,6 +1,5 @@
 import {
   CousinsArchivedEditionProps,
-  CousinsEmailCTAProps,
   CousinsSeeMoreProps,
 } from "../components/stories/StoriesPageCousins"
 import {StoryCardProps} from "../components/stories/StoryCard"
@@ -45,44 +44,43 @@ export const seeMoreProps: CousinsSeeMoreProps = {
   ],
 }
 
-export const ctaProps: CousinsEmailCTAProps = {
-  title: "TJEF on Tuesdays",
-  description:
-    "Subscribe to receive a weekly look into the developments of some of our John Ernest Fellows, accompanied by a glimpse of a few of TJEF's historic initiatives.",
-  ctaPlaceholder: "email@domain.com",
-  cta: "Enter your email address to subscribe",
-  ctaButton: "Subscribe",
-}
+const DIRECT = "DIRECT" as const
+const HOSTED = "HOSTED" as const
 
 export const cousins: CousinsArchivedEditionProps[] = [
   {
     key: "2020_11_24",
     name: "TJEF Cousins - Nov 24, 2020",
-    html: "2020_11_24.html",
+    html: "https://sh1.sendinblue.com/v814pacfpt7e.html?t=1606329993",
+    type: DIRECT,
     date: new Date(Date.parse("2020-11-24")),
   },
   {
     key: "2020_11_24",
     name: "TJEF Cousins - Nov 24, 2020",
     html: "2020_11_24.html",
+    type: HOSTED,
     date: new Date(Date.parse("2020-11-24")),
   },
   {
     key: "2020_11_24",
     name: "TJEF Cousins - Nov 24, 2020",
     html: "2020_11_24.html",
+    type: HOSTED,
     date: new Date(Date.parse("2020-11-24")),
   },
   {
     key: "2020_11_24",
     name: "TJEF Cousins - Nov 24, 2020",
     html: "2020_11_24.html",
+    type: HOSTED,
     date: new Date(Date.parse("2020-11-24")),
   },
   {
     key: "2020_11_24",
     name: "TJEF Cousins - Nov 24, 2020",
     html: "2020_11_24.html",
+    type: HOSTED,
     date: new Date(Date.parse("2020-11-24")),
   },
 ]
@@ -97,7 +95,9 @@ export const _cousins: {
   [key: string]: CousinsArchivedEditionProps
 } = Object.assign(
   {},
-  ...cousins.map((cousin) => {
-    return {[cousin.key]: cousin}
-  })
+  ...cousins
+    .filter((cousin) => cousin.type === "HOSTED")
+    .map((cousin) => {
+      return {[cousin.key]: cousin}
+    })
 )

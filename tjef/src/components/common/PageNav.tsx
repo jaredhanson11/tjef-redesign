@@ -104,7 +104,29 @@ export default function PageNav(props: PageNavProps) {
             )}>
             Board of Governors
           </div>
-          <div css={donateCss}>Donate</div>
+          <form
+            action="https://www.paypal.com/donate"
+            method="post"
+            target="_top">
+            <input
+              type="hidden"
+              name="hosted_button_id"
+              value="VB8DHAFBQ95C6"
+            />
+            <input
+              css={donateCss}
+              type="submit"
+              value="Donate"
+              name="submit"
+              title="PayPal - The safer, easier way to pay online!"
+            />
+            <img
+              alt=""
+              src="https://www.paypal.com/en_US/i/scr/pixel.gif"
+              width="1"
+              height="1"
+            />
+          </form>
         </div>
       </div>
       <hr css={lineBreakCss} />

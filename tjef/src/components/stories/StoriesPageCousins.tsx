@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core"
 import React from "react"
-import {cousins, ctaProps, seeMoreProps} from "../../data/stories"
+import {cousins, seeMoreProps} from "../../data/stories"
 import {AppRoutes} from "../../Stack"
 import defaultStyles from "../../styles"
 
@@ -13,8 +13,8 @@ export default function StoriesPageCousins(props: StoriesPageCousinsProps) {
     flexWrap: "wrap",
   })
   let seeMoreContainer = css({
-    maxWidth: 500,
-    width: 500,
+    maxWidth: 550,
+    width: 550,
     margin: "auto",
     marginBottom: 20,
     marginTop: 20,
@@ -25,7 +25,7 @@ export default function StoriesPageCousins(props: StoriesPageCousinsProps) {
         <SeeMore {...seeMoreProps} />
       </div>
       <div css={seeMoreContainer}>
-        <EmailSignup {...ctaProps} />
+        <CousinsSendinBlueSignup />
       </div>
       <div css={css(seeMoreContainer, {width: "100%", maxWidth: "100%"})}>
         <CousinsArchive cousins={cousins} />
@@ -67,67 +67,26 @@ function SeeMore(props: CousinsSeeMoreProps) {
   )
 }
 
-export type CousinsEmailCTAProps = {
-  title: string
-  description: string
-  cta: string
-  ctaPlaceholder: string
-  ctaButton: string
-}
-function EmailSignup(props: CousinsEmailCTAProps) {
-  let description: string[] =
-    typeof props.description === "string"
-      ? [props.description]
-      : props.description
-
-  let containerCss = css(defaultStyles.roundedCorners, {
-    backgroundColor: defaultStyles.colors.white,
-    padding: 40,
-    border: `${defaultStyles.colors.grey} 1px solid`,
-  })
-  let titleCss = css(defaultStyles.header1, {
-    marginBottom: 10,
-  })
-  let descriptionCss = css(defaultStyles.body, {})
-  let emailContainerCss = css(defaultStyles.marginBetweenChilren(10), {
-    marginTop: 15,
-  })
-  let emailInputHeaderCss = css(defaultStyles.body, {fontWeight: "bold"})
-  let emailInputCss = css(defaultStyles.body, {width: "80%"})
-  let emailSubmitCss = css(defaultStyles.roundedCorners, defaultStyles.body, {
-    "&:hover": {
-      opacity: ".7",
-    },
-    cursor: "pointer",
-    color: defaultStyles.colors.white,
-    backgroundColor: defaultStyles.colors.main,
-    display: "inline-block",
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 5,
-    paddingBottom: 5,
-  })
+function CousinsSendinBlueSignup() {
   return (
-    <div css={containerCss}>
-      <div css={titleCss}>{props.title}</div>
-      <div css={descriptionCss}>
-        {description.map((sentence) => (
-          <React.Fragment>
-            {sentence}
-            <br />
-          </React.Fragment>
-        ))}
-      </div>
-      <div css={emailContainerCss}>
-        <div css={emailInputHeaderCss}>{props.cta}</div>
-        <input
-          css={emailInputCss}
-          type="email"
-          placeholder={props.ctaPlaceholder}
-        />
-        <div css={emailSubmitCss}>{props.ctaButton}</div>
-      </div>
-    </div>
+    <iframe
+      title="Sendinblue email signup"
+      width="550"
+      src="https://6f046149.sibforms.com/serve/MUIEAC4XM8OgR-8kuYb8IIkXjpnoh5exDc2lWJSEM455cjabMxH2fBh01udgMeXBtIWwNvWH7KM9-mbLn-C6YzLnJy2__lxdEwYa7jo7Mx44ys3gaoghiWzh1pZ_Atq4cxVLBcbTYpUmZGa3pM79pQf7WlTaSkrwuBrVTsROtk0Dr9s116zSYpPRBnPHJqvQWe7Q1YPdo71K6lE0"
+      frameBorder="0"
+      scrolling="auto"
+      style={{
+        display: "block",
+        marginLeft: "auto",
+        marginRight: "auto",
+        maxWidth: "100%",
+      }}
+      css={css({
+        "@media screen and (min-width: 600px)": {
+          height: 500,
+        },
+        height: 600,
+      })}></iframe>
   )
 }
 
@@ -135,12 +94,23 @@ export type CousinsArchivedEditionProps = {
   key: string
   name: string
   html: string
+  type: "HOSTED" | "DIRECT"
   date: Date
 }
 type CousinsArchiveProps = {
   cousins: CousinsArchivedEditionProps[]
 }
 function CousinsArchive(props: CousinsArchiveProps) {
+  function redirectToArchivedArticle(edition: CousinsArchivedEditionProps) {
+    let redirectUrl: string = ""
+    if (edition.type === "HOSTED") {
+      redirectUrl = AppRoutes.getPath("ArchivedCousinsPage", {
+        edition: edition.key,
+      })
+    } else if (edition.type === "DIRECT") redirectUrl = edition.html
+    if (redirectUrl) window.open(redirectUrl, "_blank")
+  }
+
   let containerCss = css({
     textAlign: "center",
     width: "100%",
@@ -177,11 +147,7 @@ function CousinsArchive(props: CousinsArchiveProps) {
         {props.cousins.map((edition) => (
           <div
             css={cousinsListItemCss}
-            onClick={() =>
-              (window.location.href = AppRoutes.getPath("ArchivedCousinsPage", {
-                edition: edition.key,
-              }))
-            }>
+            onClick={() => redirectToArchivedArticle(edition)}>
             {edition.name}
           </div>
         ))}
