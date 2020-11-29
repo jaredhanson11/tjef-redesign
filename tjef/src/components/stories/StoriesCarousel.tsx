@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import {css, jsx} from "@emotion/core"
 import React, {useEffect, useState} from "react"
+import defaultStyles from "../../styles"
 import StoryCard, {StoryCardProps} from "./StoryCard"
 
 type StoriesCarouselProps = {
@@ -74,13 +75,20 @@ export default function StoriesCarousel(props: StoriesCarouselProps) {
 
   let arrowCss = css({
     height: 50,
-    width: 50,
+    width: 45,
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 50,
+    lineHeight: "50px",
     borderRadius: "50%",
-    border: "black solid thin",
     cursor: "pointer",
+    userSelect: "none",
+    "&:hover": {
+      backgroundColor: defaultStyles.colors.grey,
+    },
   })
+
+  let leftArrowCss = css(arrowCss, {paddingRight: 5})
+  let rightArrowCss = css(arrowCss, {paddingLeft: 5})
   let containerCss = css({
     display: "flex",
     alignItems: "center",
@@ -92,12 +100,12 @@ export default function StoriesCarousel(props: StoriesCarouselProps) {
     <React.Fragment>
       {activeStory ? (
         <div css={containerCss}>
-          <div css={arrowCss} onClick={previous}>
-            &#8592;
+          <div css={leftArrowCss} onClick={previous}>
+            &#9664;
           </div>
           <StoryCard {...activeStory} />
-          <div css={arrowCss} onClick={next}>
-            &#8594;
+          <div css={rightArrowCss} onClick={next}>
+            &#9654;
           </div>
         </div>
       ) : undefined}

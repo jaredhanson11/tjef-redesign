@@ -12,20 +12,20 @@ export type StoryCardProps = {
 export default function StoryCard(props: StoryCardProps) {
   let containerCss = css(defaultStyles.roundedCorners, {
     width: 600,
-    maxWidth: "100%",
-    height: 400,
-    maxHeight: "100%",
-
-    paddingLeft: 25,
-    paddingRight: 25,
-    paddingTop: 10,
-    paddingBottom: 10,
-    overflow: "scroll",
+    maxWidth: "90%",
+    height: 500,
 
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+  })
+  let contentContainerCss = css({
+    maxHeight: "100%",
+    overflowY: "scroll",
+    paddingLeft: 25,
+    paddingRight: 25,
+    paddingTop: 10,
+    paddingBottom: 10,
 
     border: `${defaultStyles.colors.grey} solid 1px`,
     backgroundColor: defaultStyles.colors.white,
@@ -33,11 +33,11 @@ export default function StoryCard(props: StoryCardProps) {
   let titleCss = css(defaultStyles.header1, {
     display: "inline-block",
     fontWeight: "normal",
+    textAlign: "center",
+    width: "100%",
   })
   let lineBreakCss = css({width: "100%"})
-  let bodyContainerCss = css({
-    height: "100%",
-  })
+  let bodyContainerCss = css(defaultStyles.body, {})
   let imgContainerCss = css({
     ...(props.imgPortrait
       ? {
@@ -58,13 +58,15 @@ export default function StoryCard(props: StoryCardProps) {
   let bodyCss = css(defaultStyles.body, {clear: "right"})
   return (
     <div css={containerCss}>
-      <div css={titleCss}>{props.title}</div>
-      <hr css={lineBreakCss} />
-      <div css={bodyContainerCss}>
-        <div css={imgContainerCss}>
-          <img css={imgCss} src={props.img} alt={"Story img"} />
+      <div css={contentContainerCss}>
+        <div css={titleCss}>{props.title}</div>
+        <hr css={lineBreakCss} />
+        <div css={bodyContainerCss}>
+          <div css={imgContainerCss}>
+            <img css={imgCss} src={props.img} alt={"Story img"} />
+          </div>
+          <div css={bodyCss}>{props.body}</div>
         </div>
-        <div css={bodyCss}>{props.body}</div>
       </div>
     </div>
   )
