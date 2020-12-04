@@ -10,7 +10,7 @@ export default function PageBody(props: PageBodyProps) {
     width: "100vw",
     height: "100%",
     minHeight: "100vh",
-    overflow: "scroll",
+    overflow: "auto",
     display: "flex",
     flexDirection: "column",
     ...(props.background === "offwhite"

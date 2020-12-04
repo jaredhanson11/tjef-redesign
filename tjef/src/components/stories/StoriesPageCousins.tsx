@@ -83,9 +83,9 @@ function CousinsSendinBlueSignup() {
       }}
       css={css({
         "@media screen and (min-width: 600px)": {
-          height: 500,
+          minHeight: 500,
         },
-        height: 600,
+        minHeight: 700,
       })}></iframe>
   )
 }

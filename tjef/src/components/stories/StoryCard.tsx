@@ -21,7 +21,7 @@ export default function StoryCard(props: StoryCardProps) {
   })
   let contentContainerCss = css({
     maxHeight: "100%",
-    overflowY: "scroll",
+    overflowY: "auto",
     paddingLeft: 25,
     paddingRight: 25,
     paddingTop: 10,
