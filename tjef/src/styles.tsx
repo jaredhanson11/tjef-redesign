@@ -13,7 +13,7 @@ const vars = {
     red: "red",
     forestGreen: "#37532d",
     lightForestGreen: "rgba(55, 83, 45, 0.75)",
-    lightGreen: "rgba(226, 239, 229)",
+    lightGreen: "rgba(55, 83, 45, 0.25)",
   },
 }
 

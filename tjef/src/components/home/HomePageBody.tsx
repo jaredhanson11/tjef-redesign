@@ -14,16 +14,17 @@ export default function HomePageBody(props: HomePageBodyProps) {
     top: 0,
     left: 0,
     backgroundImage: "url(/img/okke-homepage.png)",
-    backgroundAttachment: "fixed",
     backgroundPosition: "center",
+    backgroundSize: "cover",
     zIndex: -1,
-    backgroundSize: "contain",
     filter: "grayscale(100%)",
   })
   let boxContainerCss = css({
     maxWidth: 1500,
     maxHeight: 1000,
-    margin: "auto",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: 300,
     flexDirection: "row",
     width: "100%",
     height: "100%",
@@ -32,13 +33,13 @@ export default function HomePageBody(props: HomePageBodyProps) {
   })
   let box1Css = css({
     marginTop: "auto",
-    marginBottom: 70,
     marginLeft: "auto",
     marginRight: "auto",
+    marginBottom: 20,
   })
   let box2Css = css({
     marginTop: "auto",
-    marginBottom: 200,
+    marginBottom: 100,
     marginLeft: "auto",
     marginRight: "auto",
   })

@@ -77,7 +77,7 @@ export default function StoriesCarousel(props: StoriesCarouselProps) {
     height: 50,
     width: 45,
     textAlign: "center",
-    fontSize: 50,
+    fontSize: 35,
     lineHeight: "50px",
     borderRadius: "50%",
     cursor: "pointer",
