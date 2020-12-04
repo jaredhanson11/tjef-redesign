@@ -14,6 +14,7 @@ export default function StoriesPageStories(props: StoriesPageStoriesProps) {
     maxWidth: 1100,
     marginLeft: "auto",
     marginRight: "auto",
+    marginBottom: 10,
   })
   return (
     <div css={containerCss}>

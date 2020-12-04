@@ -10,7 +10,7 @@ import {header, subheader} from "../data/stories"
 
 function StoriesPage() {
   let fullPageCss = css({
-    height: "98vh",
+    minHeight: "98vh",
     display: "flex",
     flexDirection: "column",
   })

@@ -10,31 +10,26 @@ export type BoardMemberSectionProps = {
 }
 
 export default function BoardMemberSection(props: BoardMemberSectionProps) {
-  let containerCss = css(
-    defaultStyles.marginBetweenChilren(20, true),
-    defaultStyles.roundedCorners,
-    {
-      display: "flex",
-      flexDirection: "row",
-      flexWrap: "wrap",
-      alignItems: "center",
-      justifyItems: "center",
-      width: "95%",
+  let containerCss = css(defaultStyles.roundedCorners, {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyItems: "center",
+    maxWidth: "80%",
+    "@media screen and (min-width: 800px)": {
       maxWidth: 1000,
-      "@media screen and (min-width: 500px)": {
-        width: "80%",
-      },
-      marginRight: "auto",
-      marginLeft: "auto",
-      paddingLeft: 20,
-      paddingRight: 20,
-      paddingTop: 40,
-      paddingBottom: 40,
-      backgroundColor: defaultStyles.colors.lightGreen,
-      "& > *": {paddingRight: 10},
-      "& > *:last-child": {paddingRight: 0},
-    }
-  )
+    },
+    marginRight: "auto",
+    marginLeft: "auto",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 40,
+    paddingBottom: 40,
+    backgroundColor: defaultStyles.colors.lightGreen,
+    "& > *": {paddingRight: 10},
+    "& > *:last-child": {paddingRight: 0},
+  })
   let imgContainer = css({
     marginLeft: "auto",
     marginRight: "auto",
@@ -43,7 +38,7 @@ export default function BoardMemberSection(props: BoardMemberSectionProps) {
     width: 150,
     paddingLeft: 50,
     paddingRight: 50,
-    "@media screen and (min-width: 938px)": {
+    "@media screen and (min-width: 800px)": {
       paddingLeft: 0,
       paddingRight: 0,
       width: 250,
@@ -52,12 +47,14 @@ export default function BoardMemberSection(props: BoardMemberSectionProps) {
   })
   let contentsContainer = css({
     flexGrow: 1,
-    maxWidth: "100%",
-    width: 500,
+    maxWidth: 500,
+    width: "90%",
     textAlign: "center",
-    "@media screen and (min-width: 938px)": {
+    "@media screen and (min-width: 800px)": {
       textAlign: "left",
+      paddingLeft: 10,
     },
+    margin: "auto",
   })
   let nameCss = css(defaultStyles.header1, {
     fontWeight: "normal",

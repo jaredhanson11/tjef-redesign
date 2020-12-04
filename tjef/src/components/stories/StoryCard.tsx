@@ -13,7 +13,10 @@ export default function StoryCard(props: StoryCardProps) {
   let containerCss = css(defaultStyles.roundedCorners, {
     width: 600,
     maxWidth: "90%",
-    height: 500,
+    maxHeight: "80%",
+    "@media screen and (min-width: 800px)": {
+      maxHeight: 500,
+    },
 
     display: "flex",
     flexDirection: "column",

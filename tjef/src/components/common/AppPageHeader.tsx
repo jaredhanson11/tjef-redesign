@@ -16,6 +16,7 @@ export default function AppPageHeader(props: AppPageHeaderProps) {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    textAlign: "center",
   })
   let headerCss = css(defaultStyles.header1, {})
   let subHeaderCss = css(defaultStyles.subeader1, {})

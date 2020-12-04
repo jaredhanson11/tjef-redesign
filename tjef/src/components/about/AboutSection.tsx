@@ -11,7 +11,6 @@ export type AboutSectionProps = {
 export default function AboutSection(props: AboutSectionProps) {
   let iconHeight = 100
   let containerCss = css(defaultStyles.roundedCorners, {
-    width: "95%",
     maxWidth: 1000,
     "@media screen and (min-width: 500px)": {
       width: "80%",
