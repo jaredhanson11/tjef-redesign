@@ -235,7 +235,7 @@ function NavMenuIcon(props: NavMenuIconProps) {
   })
   return (
     <div css={containerCss} onClick={props.onClick}>
-      <img src={menuIcon} css={imgCss} />
+      <img src={menuIcon} css={imgCss} alt="Mobile Menu Icon" />
     </div>
   )
 }
