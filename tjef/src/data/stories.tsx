@@ -49,47 +49,71 @@ const HOSTED = "HOSTED" as const
 
 export const cousins: CousinsArchivedEditionProps[] = [
   {
-    key: "2020_11_24",
+    key: "2020-10-06",
+    name: "TJEF Cousins - Oct 06, 2020",
+    html: "https://sh1.sendinblue.com/2ngs9acfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-10-06")),
+  },
+  {
+    key: "2020-10-13",
+    name: "TJEF Cousins - Oct 13, 2020",
+    html: "https://sh1.sendinblue.com/2o62hacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-10-13")),
+  },
+  {
+    key: "2020-10-20",
+    name: "TJEF Cousins - Oct 20, 2020",
+    html: "https://sh1.sendinblue.com/v10ahacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-10-20")),
+  },
+  {
+    key: "2020-10-27",
+    name: "TJEF Cousins - Oct 27, 2020",
+    html: "https://sh1.sendinblue.com/v1cxlacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-10-27")),
+  },
+  {
+    key: "2020-11-03",
+    name: "TJEF Cousins - Nov 03, 2020",
+    html: "https://sh1.sendinblue.com/v1pkpacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-11-03")),
+  },
+  {
+    key: "2020-11-10",
+    name: "TJEF Cousins - Nov 10, 2020",
+    html: "https://sh1.sendinblue.com/v227tacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-11-10")),
+  },
+  {
+    key: "2020-11-17",
+    name: "TJEF Cousins - Nov 17, 2020",
+    html: "https://sh1.sendinblue.com/v7buhacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-11-17")),
+  },
+  {
+    key: "2020-11-24",
     name: "TJEF Cousins - Nov 24, 2020",
     html: "https://sh1.sendinblue.com/v814pacfpt7e.html?t=1606329993",
     type: DIRECT,
     date: new Date(Date.parse("2020-11-24")),
   },
   {
-    key: "2020_11_24",
-    name: "TJEF Cousins - Nov 24, 2020",
-    html: "2020_11_24.html",
-    type: HOSTED,
-    date: new Date(Date.parse("2020-11-24")),
+    key: "2020-12-01",
+    name: "TJEF Cousins - Dec 01, 2020",
+    html: "https://sh1.sendinblue.com/v8drtacfpt7e.html?t=1607124759",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-12-01")),
   },
-  {
-    key: "2020_11_24",
-    name: "TJEF Cousins - Nov 24, 2020",
-    html: "2020_11_24.html",
-    type: HOSTED,
-    date: new Date(Date.parse("2020-11-24")),
-  },
-  {
-    key: "2020_11_24",
-    name: "TJEF Cousins - Nov 24, 2020",
-    html: "2020_11_24.html",
-    type: HOSTED,
-    date: new Date(Date.parse("2020-11-24")),
-  },
-  {
-    key: "2020_11_24",
-    name: "TJEF Cousins - Nov 24, 2020",
-    html: "2020_11_24.html",
-    type: HOSTED,
-    date: new Date(Date.parse("2020-11-24")),
-  },
-]
-  .sort((a, b) => {
-    return a.date.getMilliseconds() - b.date.getMilliseconds()
-  })
-  .map((cousin) => {
-    return cousin
-  })
+].sort((a, b) => {
+  return b.date.valueOf() - a.date.valueOf()
+})
 
 export const _cousins: {
   [key: string]: CousinsArchivedEditionProps

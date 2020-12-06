@@ -15,13 +15,6 @@ export const subheader = "of The John Ernest Foundation"
 
 export const board: BoardMemberSectionProps[] = [
   {
-    name: "Daniel Crowder",
-    jobTitle: "Systems Engineer/Software Developer at DCTech, Ltd.",
-    whyTjef:
-      'Without mentoring, charism, or direction, great dreams often remain fallowed. TJEF provides the "spark" to cultivate a dream from seedling to harvest.',
-    avatar: danImg,
-  },
-  {
     name: "Adam Robb",
     jobTitle: "High School Math and Science Teacher",
     whyTjef:
@@ -36,17 +29,18 @@ export const board: BoardMemberSectionProps[] = [
     avatar: andrewImg,
   },
   {
+    name: "Daniel Crowder",
+    jobTitle: "Systems Engineer/Software Developer at DCTech, Ltd.",
+    whyTjef:
+      'Without mentoring, charism, or direction, great dreams often remain fallowed. TJEF provides the "spark" to cultivate a dream from seedling to harvest.',
+    avatar: danImg,
+  },
+  {
     name: "Derek Yoder",
     jobTitle: "Vice President for Development, Bluestem Communities",
     whyTjef:
       "TJEF gives opportunities for people around the globe to gain steps in obtaining their dreams.  The TJEF network is so vast, Fellows are provided a support system of mentoring and value added for growth, change and success. I am continually amazed how TJEF is changing lives in real and amazing ways.",
     avatar: derekImg,
-  },
-  {
-    name: "Kenneth Kaufman (Executive Chairman)",
-    jobTitle: "Emeritus, Stanford University",
-    whyTjef: "A way to accomplish quite a bit, quietly behind the scenes.",
-    avatar: kenImg,
   },
   {
     name: "Jared Hanson (Secretary)",
@@ -55,6 +49,12 @@ export const board: BoardMemberSectionProps[] = [
       "I was introduced as a TJEF Fellow when I was a freshman in high school and experienced first-hand the organization’s impact on my life. When I was asked to join the board after graduating from MIT, it was a no brainer. This organization, comprised of primarily volunteers, has such a large impact on hundreds of individuals who come from all walks of life. It’s special to see the ways TJEF organically develops its Fellows by connecting them with mentors within TJEF’s network or providing funds to help the Fellow pursue a dream, all the while continuing to push the Fellow outside of his or her comfort zone to enable personal growth.",
 
     avatar: jaredImg,
+  },
+  {
+    name: "Kenneth Kaufman (Executive Chairman)",
+    jobTitle: "Emeritus, Stanford University",
+    whyTjef: "A way to accomplish quite a bit, quietly behind the scenes.",
+    avatar: kenImg,
   },
   {
     name: "Randall Niemeyer (Treasurer)",
