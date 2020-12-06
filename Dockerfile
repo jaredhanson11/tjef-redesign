@@ -1,10 +1,11 @@
-FROM node:alpine as builder
-
-RUN npm install -g handlebars
-COPY ./website /home/node/website
-COPY ./scripts /home/node/scripts
-RUN /home/node/scripts/make_templates.sh
+FROM tiangolo/node-frontend:10 as node-builder
+WORKDIR /app/
+COPY ./tjef ./
+RUN npm install
+RUN npm run build
 
 FROM nginx
-COPY ./website /usr/share/nginx/html
-COPY --from=builder /home/node/website/js/templates.js /usr/share/nginx/html/js/templates.js
+WORKDIR /usr/share/nginx/html
+COPY --from=node-builder /app/public/ ./
+COPY --from=node-builder /app/build/ ./
+COPY --from=node-builder /nginx.conf /etc/nginx/conf.d/default.conf
