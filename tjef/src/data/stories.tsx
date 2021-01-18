@@ -111,6 +111,27 @@ export const cousins: CousinsArchivedEditionProps[] = [
     type: DIRECT,
     date: new Date(Date.parse("2020-12-01")),
   },
+  {
+    key: "2020-12-08",
+    name: "TJEF Cousins - Dec 08, 2020",
+    html: "https://sh1.sendinblue.com/v9fp5acfpt7e.html?t=1607637542",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-12-08")),
+  },
+  {
+    key: "2020-12-22",
+    name: "TJEF Cousins - Dec 22, 2020",
+    html: "https://sh1.sendinblue.com/vc8u1acfpt7e.html?t=1611010017",
+    type: DIRECT,
+    date: new Date(Date.parse("2020-12-22")),
+  },
+  {
+    key: "2021-01-12",
+    name: "TJEF Cousins - Jan 12, 2021",
+    html: "https://sh1.sendinblue.com/vggjdacfpt7e.html?t=1611010017",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-010-12")),
+  },
 ].sort((a, b) => {
   return b.date.valueOf() - a.date.valueOf()
 })
