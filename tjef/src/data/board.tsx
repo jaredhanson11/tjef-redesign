@@ -4,7 +4,10 @@ import andrewImg from "../imgs/andrew.png"
 import danImg from "../imgs/dan.png"
 import derekImg from "../imgs/derek.png"
 import jaredImg from "../imgs/jared.png"
+import josephImg from "../imgs/joseph.png"
 import kenImg from "../imgs/ken.png"
+import margaImg from "../imgs/marga.png"
+import matthewImg from "../imgs/matthew.png"
 import randyImg from "../imgs/randy.png"
 import ryanespostoImg from "../imgs/ryanesposto.png"
 import ryanperryImg from "../imgs/ryanperry.png"
@@ -51,10 +54,30 @@ export const board: BoardMemberSectionProps[] = [
     avatar: jaredImg,
   },
   {
+    name: "Joseph Wang",
+    jobTitle: "Analyst, Rosefinch Fund Management",
+    whyTjef:
+      "TJEF has brought together a highly diverse group of mentors from all walks of life around the world to pursue one common goal: to make real social impact in people’s lives. The mentors and fellows I met through TJEF has given me courage, creativity, and clarity that paved the path for me to find meaning and growth during high school, Stanford, and beyond. It is this shared passion for supporting others that will continue to make life-changing stories happen in the future.",
+    avatar: josephImg,
+  },
+  {
     name: "Kenneth Kaufman (Executive Chairman)",
     jobTitle: "Emeritus, Stanford University",
     whyTjef: "A way to accomplish quite a bit, quietly behind the scenes.",
     avatar: kenImg,
+  },
+  {
+    name: "Marga Hewko",
+    jobTitle: "President 2021-2022, Rotary Club of Chicago",
+    whyTjef:
+      "What is better than having a dream fulfilled?  TJEF does that and much more.  TJEF expands the world of the mentees and tickles their curiosity. Networking for changing lives in unexpected and positive ways is what TJEF has to offer no matter where the mentee came from. Sometimes what is needed is not necessarily money but a mentor who will show real interest in the goals of the student.  TJEF is there.",
+    avatar: margaImg,
+  },
+  {
+    name: "Matthew Gerber",
+    jobTitle: "Chief Innovation Officer, Western Reserve Academy",
+    whyTjef: "",
+    avatar: matthewImg,
   },
   {
     name: "Randall Niemeyer (Treasurer)",

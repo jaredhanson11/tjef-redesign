@@ -15,21 +15,18 @@ export const subheader = "John Ernest Fellows and their dreams"
 export const stories: StoryCardProps[] = [
   {
     title: "Simon Orlovsky",
-    body:
-      "The John Ernest Foundation first came to know Simon Orlovsky when he and Lucy Chibukhchyan won the nationals as youngsters, which led them to Dancing with the Stars. Simon Orlovsky was one of our first participants at the International Summer Science School in Heidelberg. Simon liked TJEF’s suggestion that he might consider attending Carleton College. Now a graduate, he’s a very loyal Carly. And now, the wonderful world of startups!",
+    body: "The John Ernest Foundation first came to know Simon Orlovsky when he and Lucy Chibukhchyan won the nationals as youngsters, which led them to Dancing with the Stars. Simon Orlovsky was one of our first participants at the International Summer Science School in Heidelberg. Simon liked TJEF’s suggestion that he might consider attending Carleton College. Now a graduate, he’s a very loyal Carly. And now, the wonderful world of startups!",
     img: simonImg,
     imgPortrait: true,
   },
   {
     title: "Jack and John",
-    body:
-      "In early June, Jack Bendell and John Woodward travelled through the American south handing  out backpacks of school supplies to families in recently-impoverished small towns.  TJEF helped design the program and provided contacts through the local Rotary Clubs, which allowed the two to create a proper itinerary for their trip with specific families and volunteer opportunities in mind.  Proper COVID-19 safety measures were taken in travelling.",
+    body: "In early June, Jack Bendell and John Woodward travelled through the American south handing  out backpacks of school supplies to families in recently-impoverished small towns.  TJEF helped design the program and provided contacts through the local Rotary Clubs, which allowed the two to create a proper itinerary for their trip with specific families and volunteer opportunities in mind.  Proper COVID-19 safety measures were taken in travelling.",
     img: jackAndJohnImg,
   },
   {
     title: "VGIVC",
-    body:
-      "Grammy winning Vance George brought Juan Montoya to the attention of TJEF years ago as a hopeful conductor from Medellin, Colombia. Vance was central to forming Juan’s professional growth, including a doctoral program at the University of Arizona. Now Juan is honoring his mentor, building out the Vance George International Vocal Competition. The pilot competition will take place in Kuala Lumpur, followed by San Francisco in the following year. ",
+    body: "Grammy winning Vance George brought Juan Montoya to the attention of TJEF years ago as a hopeful conductor from Medellin, Colombia. Vance was central to forming Juan’s professional growth, including a doctoral program at the University of Arizona. Now Juan is honoring his mentor, building out the Vance George International Vocal Competition. The pilot competition will take place in Kuala Lumpur, followed by San Francisco in the following year. ",
     img: vgivcImg,
   },
 ]
@@ -110,6 +107,86 @@ export const cousins: CousinsArchivedEditionProps[] = [
     html: "https://sh1.sendinblue.com/v8drtacfpt7e.html?t=1607124759",
     type: DIRECT,
     date: new Date(Date.parse("2020-12-01")),
+  },
+
+  {
+    key: "2021-01-26",
+    name: "TJEF Cousins - Jan 26, 2021",
+    html: "https://sh1.sendinblue.com/vgt6hacfpt7e.html?t=1623882243",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-01-26")),
+  },
+
+  {
+    key: "2021-02-09",
+    name: "TJEF Cousins - Feb 09, 2021",
+    html: "https://sh1.sendinblue.com/vi7qxacfpt7e.html?t=1623882401",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-02-09")),
+  },
+
+  {
+    key: "2021-02-24",
+    name: "TJEF Cousins - Feb 24, 2021",
+    html: "https://sh1.sendinblue.com/vix15acfpt7e.html?t=1623882432",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-02-24")),
+  },
+
+  {
+    key: "2021-03-10",
+    name: "TJEF Cousins - Mar 10, 2021",
+    html: "https://sh1.sendinblue.com/vjmbdacfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-03-10")),
+  },
+
+  {
+    key: "2021-03-23",
+    name: "TJEF Cousins - Mar 23, 2021",
+    html: "https://sh1.sendinblue.com/vjyyhacfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-03-23")),
+  },
+
+  {
+    key: "2021-04-06",
+    name: "TJEF Cousins - Apr 06, 2021",
+    html: "https://sh1.sendinblue.com/vkbllacfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-04-06")),
+  },
+
+  {
+    key: "2021-04-20",
+    name: "TJEF Cousins - Apr 20, 2021",
+    html: "https://sh1.sendinblue.com/vko8pacfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-04-20")),
+  },
+
+  {
+    key: "2021-05-04",
+    name: "TJEF Cousins - May 04, 2021",
+    html: "https://sh1.sendinblue.com/vl0vtacfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-05-04")),
+  },
+
+  {
+    key: "2021-05-18",
+    name: "TJEF Cousins - May 18, 2021",
+    html: "https://sh1.sendinblue.com/vm2t5acfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-05-18")),
+  },
+
+  {
+    key: "2021-06-01",
+    name: "TJEF Cousins - Jun 01, 2021",
+    html: "https://sh1.sendinblue.com/vmfg9acfpt7e.html?t=1623882523",
+    type: DIRECT,
+    date: new Date(Date.parse("2021-06-01")),
   },
 ].sort((a, b) => {
   return b.date.valueOf() - a.date.valueOf()
